@@ -1,3 +1,6 @@
 *.o
 *.hex
 *.elf
+*.elf.tmp
+*.bin
+*.bin.tmp
