@@ -41,11 +41,25 @@ env.Append(
             suffix=".hex",
             src_suffix='.elf',
         ),
+        build_microapp_symbols=Builder(
+            action="$CC -E -P -x c -Iinclude $SOURCE -o $TARGET",
+            suffix=".ld",
+            src_suffix='.ld.in',
+        ),
     )
 )
 
+firmware_symbols = env.build_microapp_symbols("include/microapp_symbols.ld.in")
+
 firmware_elf_tmp = env.Program(target="firmware.elf.tmp", source="main.c")
+Depends(firmware_elf_tmp, firmware_symbols)
+
 firmware_bin_tmp = env.build_elf_to_bin_tmp(firmware_elf_tmp)
 firmware_header_ld = env.build_microapp_header_symbols(firmware_bin_tmp)
+
+# Build main elf file, it depends on generating the firmware headers first
 firmware_elf = env.build_elf("main.c")
+Depends(firmware_elf, "firmware_header.ld")
+
+# Convert elf to flashable hex
 firmware_hex = env.build_hex("firmware.elf")
