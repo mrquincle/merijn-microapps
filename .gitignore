@@ -4,3 +4,4 @@
 *.elf.tmp
 *.bin
 *.bin.tmp
+*_header.ld
