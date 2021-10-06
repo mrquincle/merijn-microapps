@@ -41,6 +41,11 @@ env.Append(
             suffix=".hex",
             src_suffix='.elf',
         ),
+        build_bin=Builder(
+            action="$OBJCOPY -O binary $SOURCE $TARGET",
+            suffix=".bin",
+            src_suffix='.elf',
+        ),
         build_microapp_symbols=Builder(
             action="$CC -E -P -x c -Iinclude $SOURCE -o $TARGET",
             suffix=".ld",
@@ -63,3 +68,7 @@ Depends(firmware_elf, "firmware_header.ld")
 
 # Convert elf to flashable hex
 firmware_hex = env.build_hex("firmware.elf")
+Depends(firmware_hex, "firmware.elf")
+
+firmware_bin = env.build_bin("firmware.elf")
+Depends(firmware_bin, "firmware.elf")
