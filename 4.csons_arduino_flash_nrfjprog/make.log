@@ -1,0 +1,22 @@
+arm-none-eabi-objcopy -O binary build/main.elf.tmp build/main.bin.tmp
+
+scripts/microapp_make.py -i build/main.bin.tmp include/microapp_header_symbols.ld
+
+echo "Compile with firmware header"
+
+arm-none-eabi-g++ -std=c++17 -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -fno-exceptions -fno-enforce-eh-specs -nostdlib -ffreestanding -fno-threadsafe-statics -Wl,--gc-sections -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float
+
+src/main.c src/microapp.c src/Arduino.c src/Wire.cpp src/Serial.cpp build/main.c /home/m/workspace/bluenet/source/shared/ipc/cs_IpcRamData.c include/microapp_header_symbols.ld -I/home/m/workspace/bluenet/source/shared -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o build/main.elf
+
+core/Arduino.c core/main.c core/microapp.c core/Serial.cpp core/Wire.cpp core/ipc/cs_IpcRamData.c -Iinclude -Linclude main.c -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o main.elf
+
+
+
+
+echo "Create hex file"
+/home/m/workspace/bluenet/tools/gcc_arm_none_eabi/bin/arm-none-eabi-objcopy -O ihex build/main.elf build/main.hex
+echo "Create bin file"
+/home/m/workspace/bluenet/tools/gcc_arm_none_eabi/bin/arm-none-eabi-objcopy -O binary build/main.elf build/main.bin
+echo "APP_BINARY_SIZE = 1415; CHECKSUM = 57641; CHECKSUM_HEADER = 4385; APP_BUILD_VERSION = 0; START_OFFSET = 20; HEADER_RESERVED = 0; HEADER_RESERVED2 = 0;"
+echo "Result: build/main.hex (and build/main.bin)"
+
