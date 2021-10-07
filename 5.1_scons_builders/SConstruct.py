@@ -4,7 +4,7 @@ bld = Builder(
     suffix='.help'
 )
 env = Environment(BUILDERS={'Foo': bld})
-node = env.Foo('hello.c')
+node = env.Foo(target='linker_files', source='hello.c')
 
 # Node name has is now called hello.help
 # I want to change the "hello" part of the file

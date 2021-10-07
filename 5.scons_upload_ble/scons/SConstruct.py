@@ -63,6 +63,7 @@ env.Append(
     )
 )
 
+# TODO cleaning removes header files which are needed for other steps before generating it
 microapp_symbols = env.build_microapp_symbols("include/microapp_symbols.ld.in")
 
 firmware_elf_tmp = env.build_elf_tmp("main.c")
@@ -70,11 +71,13 @@ Depends(firmware_elf_tmp, microapp_symbols)
 
 firmware_bin_tmp = env.build_bin_tmp("main.elf.tmp")
 
-firmware_header_ld = env.build_microapp_header_symbols("main.bin.tmp")
-print(firmware_header_ld)
+firmware_header_ld = env.build_microapp_header_symbols(
+    target="include/microapp_header_symbols.ld",
+    source="main.bin.tmp"
+)
 
-#firmware_elf = env.build_elf()
-#Depends(firmware_elf, firmware_header_ld)
-#
-#firmware_hex = env.build_hex("main.elf")
-#firmware_bin = env.build_bin("main.elf")
+firmware_elf = env.build_elf(target='main.elf', source='main.c')
+Depends(firmware_elf, firmware_header_ld)
+
+firmware_hex = env.build_hex("main.elf")
+firmware_bin = env.build_bin("main.elf")
