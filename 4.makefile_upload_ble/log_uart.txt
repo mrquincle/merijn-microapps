@@ -1,0 +1,182 @@
+scripts »» ./log-client.py 
+Listening for logs on port None, and using files in "/home/m/workspace/bluenet/source" to find the log formats.
+By not providing a specific port to find the Crownstone dongle, we will try to connect and handshake with all available ports one by one until we find the dongle.
+Ports that will be checked are:
+['/dev/ttyACM0']
+No Crownstone USB connected? Retrying...
+LOG: [2021-10-07 14:39:51.012485] [croapp/cs_MicroappProtocol.cpp: 302] I HELLLOO
+LOG: [2021-10-07 14:39:54.062765] [croapp/cs_MicroappProtocol.cpp: 302] I HELLLOO
+LOG: [2021-10-07 14:39:57.139224] [croapp/cs_MicroappProtocol.cpp: 302] I HELLLOO
+LOG: [2021-10-07 14:40:00.152300] [croapp/cs_MicroappProtocol.cpp: 302] I HELLLOO
+LOG: [2021-10-07 14:40:02.709336] [et/source/src/ble/cs_Stack.cpp: 579] I onConnect as peripheral
+LOG: [2021-10-07 14:40:02.721085] [et/source/src/ble/cs_Stack.cpp: 634] I Device connected
+LOG: [2021-10-07 14:40:03.200255] [croapp/cs_MicroappProtocol.cpp: 302] I HELLLOO
+LOG: [2021-10-07 14:40:03.954910] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:03.956204] [e/src/microapp/cs_Microapp.cpp: 208] I handleGetInfo
+LOG: [2021-10-07 14:40:04.152498] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:04.154402] [e/src/microapp/cs_Microapp.cpp: 287] I handleRemove 0
+LOG: [2021-10-07 14:40:04.155614] [icroapp/cs_MicroappStorage.cpp:  85] I erase addr=0x00069000 size=1
+LOG: [2021-10-07 14:40:04.318148] [icroapp/cs_MicroappStorage.cpp: 361] I Flash erase result=0 addr=0x00069000 len=1
+LOG: [2021-10-07 14:40:05.125931] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:05.128336] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:05.129569] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=0
+LOG: [2021-10-07 14:40:05.130797] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069000 of size 192
+LOG: [2021-10-07 14:40:05.361851] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:05.860278] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:05.862218] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:05.863601] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=192
+LOG: [2021-10-07 14:40:05.864762] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x000690C0 of size 192
+LOG: [2021-10-07 14:40:05.995018] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:06.591129] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:06.593439] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:06.594354] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=384
+LOG: [2021-10-07 14:40:06.595423] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069180 of size 192
+LOG: [2021-10-07 14:40:06.735609] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:07.276731] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:07.278297] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:07.279657] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=576
+LOG: [2021-10-07 14:40:07.281165] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069240 of size 192
+LOG: [2021-10-07 14:40:07.368663] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:08.001002] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:08.003379] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:08.004911] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=768
+LOG: [2021-10-07 14:40:08.006000] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069300 of size 192
+LOG: [2021-10-07 14:40:08.095644] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:08.737171] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:08.738863] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:08.740079] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=960
+LOG: [2021-10-07 14:40:08.741380] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x000693C0 of size 192
+LOG: [2021-10-07 14:40:08.781094] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:09.567383] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:09.569146] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:09.570512] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=1152
+LOG: [2021-10-07 14:40:09.571730] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069480 of size 192
+LOG: [2021-10-07 14:40:09.704703] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:10.202349] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:10.203569] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:40:10.204233] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=1344
+LOG: [2021-10-07 14:40:10.205584] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069540 of size 56
+LOG: [2021-10-07 14:40:10.245749] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:40:10.491798] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:10.493843] [e/src/microapp/cs_Microapp.cpp: 271] I handleValidate 0
+LOG: [2021-10-07 14:40:10.495241] [icroapp/cs_MicroappStorage.cpp: 263] I Validate app 0
+LOG: [2021-10-07 14:40:10.497023] [icroapp/cs_MicroappStorage.cpp: 287] I Header checksum: expected=13956 calculated=13956
+LOG: [2021-10-07 14:40:10.498360] [icroapp/cs_MicroappStorage.cpp: 317] I Binary checksum: expected=3236 calculated=3236
+LOG: [2021-10-07 14:40:10.499596] [e/src/microapp/cs_Microapp.cpp: 106] I New app on index 0: stored checksum 0 and 0, binary checksum 3236 and 13956
+LOG: [2021-10-07 14:40:10.501129] [e/src/microapp/cs_Microapp.cpp: 141] I startApp 0
+LOG: [2021-10-07 14:40:10.697217] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:40:10.698928] [e/src/microapp/cs_Microapp.cpp: 313] I handleEnable 0
+LOG: [2021-10-07 14:40:10.700608] [e/src/microapp/cs_Microapp.cpp: 141] I startApp 0
+LOG: [2021-10-07 14:40:10.702255] [croapp/cs_MicroappProtocol.cpp: 512] I Init memory: clear 0x2000f700 to 0x2000ff00
+LOG: [2021-10-07 14:40:10.705210] [croapp/cs_MicroappProtocol.cpp: 492] I Microapp: start at 0x00069014
+LOG: [2021-10-07 14:40:10.707023] [croapp/cs_MicroappProtocol.cpp: 497] I Check main code at 0x00069015
+LOG: [2021-10-07 14:40:10.708431] [croapp/cs_MicroappProtocol.cpp: 501] I Call function in module: 0x69015
+LOG: [2021-10-07 14:40:10.709701] [croapp/cs_MicroappProtocol.cpp: 503] I Module did run.
+LOG: [2021-10-07 14:40:10.710938] [croapp/cs_MicroappProtocol.cpp: 506] I Booted is at address: 0x200056fc
+LOG: [2021-10-07 14:40:12.265826] [t/source/src/cs_Crownstone.cpp: 112] I Welcome to Bluenet!
+LOG: [2021-10-07 14:40:12.266245] [t/source/src/cs_Crownstone.cpp: 113] I  _|_|_|    _|                                            _|     
+LOG: [2021-10-07 14:40:12.266686] [t/source/src/cs_Crownstone.cpp: 114] I  _|    _|  _|  _|    _|    _|_|    _|_|_|      _|_|    _|_|_|_| 
+LOG: [2021-10-07 14:40:12.266956] [t/source/src/cs_Crownstone.cpp: 115] I  _|_|_|    _|  _|    _|  _|_|_|_|  _|    _|  _|_|_|_|    _|     
+LOG: [2021-10-07 14:40:12.267257] [t/source/src/cs_Crownstone.cpp: 116] I  _|    _|  _|  _|    _|  _|        _|    _|  _|          _|     
+LOG: [2021-10-07 14:40:12.267517] [t/source/src/cs_Crownstone.cpp: 117] I  _|_|_|    _|    _|_|_|    _|_|_|  _|    _|    _|_|_|      _|_| 
+Failed CRC
+LOG: [2021-10-07 14:40:12.269861] [ce/src/drivers/cs_Watchdog.cpp:  38] I Start watchdog
+LOG: [2021-10-07 14:40:12.270449] [t/source/src/cs_Crownstone.cpp: 955] I Bootloader version: 2.1.0-RC255
+LOG: [2021-10-07 14:40:12.273111] [t/source/src/cs_Crownstone.cpp: 925] I heapEnd=0x20008DFC maxHeapEnd=0x20008DF0 minStackEnd=0x2000F4A8 minFree=3758060047 sbrkFails=0
+LOG: [2021-10-07 14:40:12.273625] [t/source/src/cs_Crownstone.cpp: 930] I Scheduler current free=0 max used=0
+LOG: [2021-10-07 14:40:12.277618] [t/source/src/cs_Crownstone.cpp: 250] I ---- init ----
+LOG: [2021-10-07 14:40:12.278553] [t/source/src/cs_Crownstone.cpp: 303] I Init drivers
+LOG: [2021-10-07 14:40:12.279625] [et/source/src/ble/cs_Stack.cpp:  50] I Init stack
+LOG: [2021-10-07 14:40:12.280141] [ource/src/drivers/cs_Timer.cpp:  19] I Init timer
+LOG: [2021-10-07 14:40:12.280598] [ource/src/drivers/cs_Timer.cpp:  23] I Scheduler requires 5148B ram. Evt size=148
+LOG: [2021-10-07 14:40:12.281228] [et/source/src/ble/cs_Stack.cpp:  88] I Init softdevice
+LOG: [2021-10-07 14:40:12.539470] [rce/src/drivers/cs_Storage.cpp:  29] I Init storage
+LOG: [2021-10-07 14:40:12.541356] [rce/src/drivers/cs_Storage.cpp:  59] I Storage init success, wait for event.
+LOG: [2021-10-07 14:40:12.543538] [t/source/src/cs_Crownstone.cpp: 783] I ---- running ----
+Failed CRC
+LOG: [2021-10-07 14:40:12.547452] [t/source/src/cs_Crownstone.cpp: 352] I GPRegRet: 1 0
+LOG: [2021-10-07 14:40:12.549593] [t/source/src/cs_Crownstone.cpp: 360] I Reset reason: 4 - watchdog=0 soft=1 lockup=0 off=0
+LOG: [2021-10-07 14:40:12.551793] [t/source/src/cs_Crownstone.cpp: 379] I Init command handler
+LOG: [2021-10-07 14:40:12.554104] [t/source/src/cs_Crownstone.cpp: 382] I Init factory reset
+LOG: [2021-10-07 14:40:12.555894] [t/source/src/cs_Crownstone.cpp: 385] I Init encryption
+LOG: [2021-10-07 14:40:12.558033] [t/source/src/cs_Crownstone.cpp: 391] I Init switch
+LOG: [2021-10-07 14:40:12.559546] [/src/switch/cs_SmartSwitch.cpp:  25] I init stored=228, intended=100 allowDimming=1 _allowSwitching=1
+LOG: [2021-10-07 14:40:12.562435] [/source/src/drivers/cs_PWM.cpp:  64] I Init PWM
+LOG: [2021-10-07 14:40:12.577951] [t/source/src/cs_Crownstone.cpp: 394] I Init temperature guard
+LOG: [2021-10-07 14:40:12.579733] [t/source/src/cs_Crownstone.cpp: 397] I Init power sampler
+LOG: [2021-10-07 14:40:12.581908] [rocessing/cs_PowerSampling.cpp: 142] I Init buffers
+LOG: [2021-10-07 14:40:12.583417] [/source/src/drivers/cs_ADC.cpp:  84] I init: period=200us
+LOG: [2021-10-07 14:40:12.585003] [/source/src/drivers/cs_ADC.cpp: 222] I Init channel 0 on AIN2, range=3600mV, ref=ain255
+LOG: [2021-10-07 14:40:12.585856] [/source/src/drivers/cs_ADC.cpp: 222] I Init channel 1 on AIN1, range=3600mV, ref=ain255
+LOG: [2021-10-07 14:40:12.586939] [t/source/src/cs_Crownstone.cpp: 403] I Configure LEDs
+LOG: [2021-10-07 14:40:12.587960] [t/source/src/cs_Crownstone.cpp: 263] I ---- configure ----
+LOG: [2021-10-07 14:40:12.588893] [t/source/src/cs_Crownstone.cpp: 431] I > stack ...
+LOG: [2021-10-07 14:40:12.589882] [et/source/src/ble/cs_Stack.cpp: 138] I Init radio
+LOG: [2021-10-07 14:40:12.590593] [et/source/src/ble/cs_Stack.cpp: 173] I Softdevice enabled
+LOG: [2021-10-07 14:40:12.591575] [t/source/src/cs_Crownstone.cpp: 745] I Reset counter at 10
+LOG: [2021-10-07 14:40:12.592637] [t/source/src/cs_Crownstone.cpp: 441] I > advertisement ...
+LOG: [2021-10-07 14:40:12.594375] [rce/src/ble/cs_ServiceData.cpp: 113] I Set crownstone id to 1
+LOG: [2021-10-07 14:40:12.598121] [t/source/src/cs_Crownstone.cpp: 267] I Create timer
+LOG: [2021-10-07 14:40:12.599558] [t/source/src/cs_Crownstone.cpp: 271] I ---- mode ----
+LOG: [2021-10-07 14:40:12.600574] [et/source/src/mesh/cs_Mesh.cpp:  43] I init
+LOG: [2021-10-07 14:40:12.601228] [ource/src/mesh/cs_MeshCore.cpp:  78] I cs_mesh_read_cb handle=2 size=8 [  0,   0,   0,   0,   0,  32,   2,   0]
+LOG: [2021-10-07 14:40:12.603192] [ource/src/mesh/cs_MeshCore.cpp:  78] I cs_mesh_read_cb handle=1 size=4 [  0,   0,   1,   0]
+LOG: [2021-10-07 14:40:12.605275] [ource/src/mesh/cs_MeshCore.cpp:  64] I cs_mesh_write_cb handle=1 retCode=0
+LOG: [2021-10-07 14:40:12.606179] [et/source/src/mesh/cs_Mesh.cpp:  68] I Initializing and adding models
+LOG: [2021-10-07 14:40:12.608534] [ource/src/mesh/cs_MeshCore.cpp: 296] I Mesh scanner: interval=140ms window=140ms
+LOG: [2021-10-07 14:40:12.609619] [ource/src/mesh/cs_MeshCore.cpp: 470] I setTxPower 4
+LOG: [2021-10-07 14:40:12.610681] [ource/src/mesh/cs_MeshCore.cpp: 341] I provisionSelf
+LOG: [2021-10-07 14:40:12.611722] [ource/src/mesh/cs_MeshCore.cpp: 358] I unicast address=1
+LOG: [2021-10-07 14:40:12.614457] [calisation/cs_MeshTopology.cpp:  38] I Reset
+LOG: [2021-10-07 14:40:12.615583] [sation/cs_AssetFilterStore.cpp:  23] I init
+LOG: [2021-10-07 14:40:12.617289] [sation/cs_AssetFilterStore.cpp:  26] I Successfully loaded 0 filters
+LOG: [2021-10-07 14:40:12.618644] [vices/cs_CrownstoneService.cpp:  25] I Add crownstone service
+LOG: [2021-10-07 14:40:12.619751] [s_DeviceInformationService.cpp:  87] I Device Information Service init
+LOG: [2021-10-07 14:40:12.621413] [s_DeviceInformationService.cpp: 100] I Characteristic Hardware Revision added
+LOG: [2021-10-07 14:40:12.622692] [s_DeviceInformationService.cpp: 121] I Characteristic Firmware Revision added
+LOG: [2021-10-07 14:40:12.623943] [vices/cs_CrownstoneService.cpp:  32] I Crownstone Service init
+LOG: [2021-10-07 14:40:12.625081] [vices/cs_CrownstoneService.cpp:  45] I Characteristic Session data added
+LOG: [2021-10-07 14:40:12.626589] [vices/cs_CrownstoneService.cpp:  50] I Characteristic Recovery added
+LOG: [2021-10-07 14:40:12.627651] [t/source/src/cs_Crownstone.cpp: 565] I Enable AES encryption
+LOG: [2021-10-07 14:40:12.629640] [t/source/src/cs_Crownstone.cpp: 275] I ---- init services ----
+LOG: [2021-10-07 14:40:12.631687] [t/source/src/cs_Crownstone.cpp: 279] I ---- init central ----
+LOG: [2021-10-07 14:40:12.633927] [t/source/src/cs_Crownstone.cpp: 284] I ---- init microapp ----
+LOG: [2021-10-07 14:40:12.634858] [icroapp/cs_MicroappStorage.cpp:  63] I Sucessfully initialized from 0x00069000 to 0x0006AFFF
+LOG: [2021-10-07 14:40:12.635993] [croapp/cs_MicroappProtocol.cpp: 401] I Set IPC info for microapp
+LOG: [2021-10-07 14:40:12.637902] [icroapp/cs_MicroappStorage.cpp: 263] I Validate app 0
+LOG: [2021-10-07 14:40:12.638313] [icroapp/cs_MicroappStorage.cpp: 287] I Header checksum: expected=13956 calculated=13956
+LOG: [2021-10-07 14:40:12.640353] [icroapp/cs_MicroappStorage.cpp: 317] I Binary checksum: expected=3236 calculated=3236
+LOG: [2021-10-07 14:40:12.641200] [e/src/microapp/cs_Microapp.cpp: 141] I startApp 0
+LOG: [2021-10-07 14:40:12.642154] [croapp/cs_MicroappProtocol.cpp: 512] I Init memory: clear 0x2000f700 to 0x2000ff00
+LOG: [2021-10-07 14:40:12.643251] [croapp/cs_MicroappProtocol.cpp: 492] I Microapp: start at 0x00069014
+LOG: [2021-10-07 14:40:12.644250] [croapp/cs_MicroappProtocol.cpp: 497] I Check main code at 0x00069015
+LOG: [2021-10-07 14:40:12.645353] [croapp/cs_MicroappProtocol.cpp: 501] I Call function in module: 0x69015
+LOG: [2021-10-07 14:40:12.646423] [croapp/cs_MicroappProtocol.cpp: 503] I Module did run.
+LOG: [2021-10-07 14:40:12.647491] [croapp/cs_MicroappProtocol.cpp: 506] I Booted is at address: 0x200056fc
+LOG: [2021-10-07 14:40:12.648674] [t/source/src/cs_Crownstone.cpp: 641] I ---- startup ----
+LOG: [2021-10-07 14:40:12.650766] [t/source/src/cs_Crownstone.cpp: 646] I Boot delay: 400 ms
+LOG: [2021-10-07 14:40:13.052742] [t/source/src/cs_Crownstone.cpp: 651] I Start advertising
+LOG: [2021-10-07 14:40:13.108166] [/source/src/drivers/cs_PWM.cpp: 167] I Start. Wait for zero crossing: 0
+MULTIPLE START TOKENS
+LOG: [2021-10-07 14:40:13.113381] [rocessing/cs_PowerSampling.cpp: 205] I Start power sample ...
+LOG: [2021-10-07 14:40:13.114999] [et/source/src/mesh/cs_Mesh.cpp:  99] I start
+LOG: [2021-10-07 14:40:13.116618] [src/mesh/cs_MeshAdvertiser.cpp:  62] I setTxPower 4
+LOG: [2021-10-07 14:40:13.118262] [t/source/src/cs_Crownstone.cpp: 717] I Address: FD:FC:93:F8:97:BA
+LOG: [2021-10-07 14:40:13.123551] [t/source/src/cs_Crownstone.cpp: 719] I Address id=0 type=1
+LOG: [2021-10-07 14:40:13.133949] [/source/src/drivers/cs_ADC.cpp: 663] W ADC restarted (ignore first warning on boot)
+LOG: [2021-10-07 14:40:13.216077] [t/source/src/cs_Crownstone.cpp: 925] I heapEnd=0x2000B98C maxHeapEnd=0x2000B98C minStackEnd=0x2000F408 minFree=14972 sbrkFails=0
+LOG: [2021-10-07 14:40:13.218272] [t/source/src/cs_Crownstone.cpp: 930] I Scheduler current free=29 max used=4
+LOG: [2021-10-07 14:40:13.219841] [croapp/cs_MicroappProtocol.cpp: 532] I Start loading
+LOG: [2021-10-07 14:40:13.221673] [croapp/cs_MicroappProtocol.cpp: 429] I Get IPC info for microapp
+LOG: [2021-10-07 14:40:13.223024] [croapp/cs_MicroappProtocol.cpp: 439] I Get microapp info from address: 2000ff54
+LOG: [2021-10-07 14:40:13.224772] [croapp/cs_MicroappProtocol.cpp: 451] I Found RAM for Microapp
+LOG: [2021-10-07 14:40:13.226228] [croapp/cs_MicroappProtocol.cpp: 452] I   protocol: 00
+LOG: [2021-10-07 14:40:13.227506] [croapp/cs_MicroappProtocol.cpp: 453] I   setup():  71 92 06 00
+LOG: [2021-10-07 14:40:13.228828] [croapp/cs_MicroappProtocol.cpp: 454] I   loop():   d9 90 06 00
+LOG: [2021-10-07 14:40:13.230314] [croapp/cs_MicroappProtocol.cpp: 469] I Found setup at 69271
+LOG: [2021-10-07 14:40:13.231512] [croapp/cs_MicroappProtocol.cpp: 470] I Found loop at 690d9
+LOG: [2021-10-07 14:40:13.232879] [croapp/cs_MicroappProtocol.cpp: 535] I Set loaded to true
+LOG: [2021-10-07 14:40:13.234189] [croapp/cs_MicroappProtocol.cpp: 548] I Call setup at 0x69271
+LOG: [2021-10-07 14:40:13.235572] [croapp/cs_MicroappProtocol.cpp: 550] I Setup done
+LOG: [2021-10-07 14:40:13.606874] [ource/src/mesh/cs_MeshCore.cpp: 589] I net_state_ext_write_done seqNum=73728
+LOG: [2021-10-07 14:40:14.132332] [croapp/cs_MicroappProtocol.cpp: 302] I HELLLOO

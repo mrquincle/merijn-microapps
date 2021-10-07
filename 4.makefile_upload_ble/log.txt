@@ -1,0 +1,13 @@
+crownstone-microapp »» make
+Get updated ino file
+Compile without firmware header
+Create temp bin file
+Read header: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=0, checksum=0, checksumHeader=0, appBuildVersion=0, startOffset=0, reserved=0, reserved2=0)
+Calculate header checksum from: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=1400, checksum=3236, checksumHeader=0, appBuildVersion=0, startOffset=20, reserved=0, reserved2=0) [0, 1, 120, 5, 164, 12, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0]
+Final header: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=1400, checksum=3236, checksumHeader=13956, appBuildVersion=0, startOffset=20, reserved=0, reserved2=0)
+Compile with firmware header
+Create hex file
+Create bin file
+APP_BINARY_SIZE = 1400; CHECKSUM = 3236; CHECKSUM_HEADER = 13956; APP_BUILD_VERSION = 0; START_OFFSET = 20; HEADER_RESERVED = 0; HEADER_RESERVED2 = 0;
+Result: build/example.hex (and build/example.bin)
+

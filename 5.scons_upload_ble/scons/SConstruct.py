@@ -28,17 +28,19 @@ env.Append(
 env.Append(
     BUILDERS = dict(
         build_elf_tmp=Builder(
-            action="$CC $CCFLAGS $SOURCE -Iinclude -Icore -Linclude -Tgeneric_gcc_nrf52.ld -o main.elf.tmp",
+            action="$CC $CCFLAGS $SOURCE -Iinclude -Icore -Linclude -Tgeneric_gcc_nrf52.ld -o $TARGET",
+            suffix="elf.tmp",
+            src_suffix=".c",
         ),
         build_bin_tmp=Builder(
             action="$OBJCOPY -O binary main.elf.tmp main.bin.tmp",
             suffix=".bin.tmp",
-            #src_suffix='.elf.tmp'
+            src_suffix='.elf.tmp'
         ),
         build_microapp_header_symbols=Builder(
-            action="./scripts/microapp_make.py -i $SOURCE $TARGET",
-            suffix="_header.ld",
-            src_suffix='.bin.tmp'
+            action="./scripts/microapp_make.py -i $SOURCE include/microapp_header_symbols.ld",
+            src_suffix='.bin.tmp',
+            suffix="microapp_header_symbols.ld",
         ),
         build_elf=Builder(
             action="$CC $CCFLAGS main.c include/microapp_header_symbols.ld -Icore -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o main.elf",
@@ -61,17 +63,18 @@ env.Append(
     )
 )
 
-firmware_symbols = env.build_microapp_symbols("include/microapp_symbols.ld.in")
+microapp_symbols = env.build_microapp_symbols("include/microapp_symbols.ld.in")
 
 firmware_elf_tmp = env.build_elf_tmp("main.c")
-Depends(firmware_elf_tmp, firmware_symbols)
+Depends(firmware_elf_tmp, microapp_symbols)
 
-firmware_bin_tmp = env.build_bin_tmp(firmware_elf_tmp)
+firmware_bin_tmp = env.build_bin_tmp("main.elf.tmp")
 
-firmware_header_ld = env.build_microapp_header_symbols(firmware_bin_tmp)
+firmware_header_ld = env.build_microapp_header_symbols("main.bin.tmp")
+print(firmware_header_ld)
 
-firmware_elf = env.build_elf()
-Depends(firmware_elf, firmware_header_ld)
-
-firmware_hex = env.build_hex("main.elf")
-firmware_bin = env.build_bin("main.elf")
+#firmware_elf = env.build_elf()
+#Depends(firmware_elf, firmware_header_ld)
+#
+#firmware_hex = env.build_hex("main.elf")
+#firmware_bin = env.build_bin("main.elf")

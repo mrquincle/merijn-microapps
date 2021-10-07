@@ -1,0 +1,11 @@
+1.scons_build_bin »» scons
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+arm-none-eabi-gcc -o main.o -c -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float -Iinclude -Linclude main.c
+arm-none-eabi-gcc -o firmware.elf.tmp -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld main.o
+scons: done building targets.
+
+1.scons_build_bin »» ls
+firmware.elf.tmp  include  main.c  main.o  makefile  SConstruct.py
+

@@ -1,0 +1,20 @@
+2.scons_makefile_remake »» scons
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+arm-none-eabi-objcopy -O binary firmware.elf firmware.bin
+arm-none-eabi-gcc -o main.o -c -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float -Iinclude -Linclude main.c
+arm-none-eabi-gcc -E -P -x c -Iinclude include/microapp_symbols.ld.in -o include/microapp_symbols.ld
+arm-none-eabi-gcc -o firmware.elf.tmp -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld main.o
+arm-none-eabi-objcopy -O binary firmware.elf.tmp firmware.bin.tmp
+arm-none-eabi-objcopy -O ihex firmware.elf firmware.hex
+./scripts/microapp_make.py -i firmware.bin.tmp firmware_header.ld
+Read header: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=0, checksum=0, checksumHeader=0, appBuildVersion=0, startOffset=0, reserved=0, reserved2=0)
+Calculate header checksum from: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=2016, checksum=5941, checksumHeader=0, appBuildVersion=0, startOffset=20, reserved=0, reserved2=0) [0, 1, 224, 7, 53, 23, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0]
+Final header: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=2016, checksum=5941, checksumHeader=64122, appBuildVersion=0, startOffset=20, reserved=0, reserved2=0)
+arm-none-eabi-gcc main.c -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o firmware.elf
+scons: done building targets.
+
+2.scons_makefile_remake »» ls
+firmware.bin      firmware.elf      firmware_header.ld  include  main.o         scripts
+firmware.bin.tmp  firmware.elf.tmp  firmware.hex        main.c   SConstruct.py

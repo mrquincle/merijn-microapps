@@ -1,0 +1,62 @@
+scripts »» ./log-client.py 
+Listening for logs on port None, and using files in "/home/m/workspace/bluenet/source" to find the log formats.
+By not providing a specific port to find the Crownstone dongle, we will try to connect and handshake with all available ports one by one until we find the dongle.
+Ports that will be checked are:
+['/dev/ttyACM0']
+LOG: [2021-10-07 14:48:15.457419] [rce/src/ble/cs_ServiceData.cpp: 534] I sendMeshState
+LOG: [2021-10-07 14:48:15.820262] [et/source/src/ble/cs_Stack.cpp: 579] I onConnect as peripheral
+LOG: [2021-10-07 14:48:15.821526] [et/source/src/ble/cs_Stack.cpp: 634] I Device connected
+LOG: [2021-10-07 14:48:17.087672] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:17.088730] [e/src/microapp/cs_Microapp.cpp: 208] I handleGetInfo
+LOG: [2021-10-07 14:48:17.265650] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:17.266723] [e/src/microapp/cs_Microapp.cpp: 287] I handleRemove 0
+LOG: [2021-10-07 14:48:17.267750] [icroapp/cs_MicroappStorage.cpp:  85] I erase addr=0x00069000 size=1
+LOG: [2021-10-07 14:48:17.436139] [icroapp/cs_MicroappStorage.cpp: 361] I Flash erase result=0 addr=0x00069000 len=1
+LOG: [2021-10-07 14:48:18.095723] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:18.097877] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:18.099240] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=0
+LOG: [2021-10-07 14:48:18.100352] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069000 of size 192
+LOG: [2021-10-07 14:48:18.206533] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:18.928547] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:18.930289] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:18.931525] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=192
+LOG: [2021-10-07 14:48:18.932704] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x000690C0 of size 192
+LOG: [2021-10-07 14:48:19.039125] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:19.659178] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:19.660795] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:19.662159] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=384
+LOG: [2021-10-07 14:48:19.663356] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069180 of size 192
+LOG: [2021-10-07 14:48:19.746390] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:20.441627] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:20.443162] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:20.444233] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=576
+LOG: [2021-10-07 14:48:20.445348] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069240 of size 192
+LOG: [2021-10-07 14:48:20.519541] [t/source/src/cs_Crownstone.cpp: 925] I heapEnd=0x2000BB2C maxHeapEnd=0x2000BB2C minStackEnd=0x2000F078 minFree=13644 sbrkFails=0
+LOG: [2021-10-07 14:48:20.521136] [t/source/src/cs_Crownstone.cpp: 930] I Scheduler current free=30 max used=7
+LOG: [2021-10-07 14:48:20.587400] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:21.218239] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:21.218960] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:21.219340] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=768
+LOG: [2021-10-07 14:48:21.219758] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069300 of size 192
+LOG: [2021-10-07 14:48:21.366609] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:21.996894] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:21.998661] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:22.000324] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=960
+LOG: [2021-10-07 14:48:22.001522] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x000693C0 of size 192
+LOG: [2021-10-07 14:48:22.146181] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:22.777497] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:22.779280] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:22.780567] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=1152
+LOG: [2021-10-07 14:48:22.782210] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069480 of size 192
+LOG: [2021-10-07 14:48:22.903154] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:23.312319] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:23.315175] [ocessing/cs_CommandHandler.cpp: 948] I handle microapp upload command
+LOG: [2021-10-07 14:48:23.316428] [e/src/microapp/cs_Microapp.cpp: 237] I handleUpload index=0 offset=1344
+LOG: [2021-10-07 14:48:23.317891] [icroapp/cs_MicroappStorage.cpp:  96] I Write chunk at 0x00069540 of size 60
+LOG: [2021-10-07 14:48:23.369737] [icroapp/cs_MicroappStorage.cpp: 129] I Done
+LOG: [2021-10-07 14:48:23.605755] [vices/cs_CrownstoneService.cpp:  83] I Characteristic value is being written
+LOG: [2021-10-07 14:48:23.607131] [e/src/microapp/cs_Microapp.cpp: 271] I handleValidate 0
+LOG: [2021-10-07 14:48:23.608511] [icroapp/cs_MicroappStorage.cpp: 263] I Validate app 0
+LOG: [2021-10-07 14:48:23.609555] [icroapp/cs_MicroappStorage.cpp: 279] W Microapp startOffset=0 is too large.
+LOG: [2021-10-07 14:48:23.610609] [e/src/microapp/cs_Microapp.cpp:  98] I No valid app binary on index 0
+

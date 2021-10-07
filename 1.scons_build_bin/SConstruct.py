@@ -20,20 +20,20 @@ env.Append(
     LINKFLAGS=cc_flags + cc_includes + linker_flags
 )
 
-env.Append(
-    BUILDERS=dict(
-        ElfToBinTmp=Builder(
-            action=env.VerboseAction(" ".join([
-                "$OBJCOPY",
-                "-O",
-                "binary",
-                "$SOURCES",
-                "$TARGET"
-            ]), "Buidling $TARGET"),
-            suffix=".bin.tmp"
-        )
-    )
-)
+#env.Append(
+#    BUILDERS=dict(
+#        ElfToBinTmp=Builder(
+#            action=env.VerboseAction(" ".join([
+#                "$OBJCOPY",
+#                "-O",
+#                "binary",
+#                "$SOURCES",
+#                "$TARGET"
+#            ]), "Buidling $TARGET"),
+#            suffix=".bin.tmp"
+#        )
+#    )
+#)
 
 
 Program(target="firmware.elf.tmp", source="main.c")
