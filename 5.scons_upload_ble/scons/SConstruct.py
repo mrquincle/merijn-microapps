@@ -1,4 +1,13 @@
 from SCons.Script import(DefaultEnvironment)
+import subprocess
+import os
+import shutil
+
+def create_empty_header_symbols_file():
+    print("Creating empty header file")
+    src_file = os.getcwd() + "/include/microapp_header_symbols_empty.ld"
+    dst_file = os.getcwd() + "/include/microapp_header_symbols.ld"
+    shutil.copyfile(src_file, dst_file)
 
 env = DefaultEnvironment()
 
@@ -63,7 +72,10 @@ env.Append(
     )
 )
 
-# TODO cleaning removes header files which are needed for other steps before generating it
+if env.GetOption('clean'):
+    create_empty_header_symbols_file()
+    env.NoClean("include/microapp_header_symbols.ld")
+
 microapp_symbols = env.build_microapp_symbols("include/microapp_symbols.ld.in")
 
 firmware_elf_tmp = env.build_elf_tmp("main.c")
@@ -75,6 +87,8 @@ firmware_header_ld = env.build_microapp_header_symbols(
     target="include/microapp_header_symbols.ld",
     source="main.bin.tmp"
 )
+env.NoClean("include/microapp_header_symbols.ld")
+env.AlwaysBuild("include/microapp_header_symbols.ld")
 
 firmware_elf = env.build_elf(target='main.elf', source='main.c')
 Depends(firmware_elf, firmware_header_ld)

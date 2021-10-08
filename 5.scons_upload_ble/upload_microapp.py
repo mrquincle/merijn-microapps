@@ -33,8 +33,8 @@ except Exception as e:
 
 # create the library instance
 print(f'Initializing tool with bleAdapterAddress={tool_config["bleAdapterAddress"]}')
-core = CrownstoneBle(bleAdapterAddress=tool_config["bleAdapterAddress"])
-#core = CrownstoneBle(bleAdapterAddress="00:1A:7D:DA:71:13")
+#core = CrownstoneBle(bleAdapterAddress=tool_config["bleAdapterAddress"])
+core = CrownstoneBle(bleAdapterAddress="00:1A:7D:DA:71:13")
 
 # load the encryption keys into the library
 try:

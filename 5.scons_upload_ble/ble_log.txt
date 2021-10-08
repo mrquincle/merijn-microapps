@@ -1,0 +1,684 @@
+5.scons_upload_ble »» ./upload.sh 
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to restart 'bluetooth.service'.
+Authenticating as: m,,, (m)
+Password: 
+==== AUTHENTICATION COMPLETE ===
+scons: Reading SConscript files ...
+Creating empty header file
+scons: done reading SConscript files.
+scons: Cleaning targets ...
+Removed include/microapp_symbols.ld
+Removed main.elf.tmp
+Removed main.bin.tmp
+Removed main.elf
+Removed main.bin
+Removed main.hex
+scons: done cleaning targets.
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+arm-none-eabi-g++ -CC -E -P -x c -Iinclude include/microapp_symbols.ld.in -o include/microapp_symbols.ld
+arm-none-eabi-g++ -std=c++17 -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -fno-exceptions -fno-enforce-eh-specs -nostdlib -ffreestanding -fno-threadsafe-statics -Wl,--gc-sections -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float core/Arduino.c core/main.c core/microapp.c core/Serial.cpp core/Wire.cpp core/ipc/cs_IpcRamData.c -Iinclude -Linclude main.c -Iinclude -Icore -Linclude -Tgeneric_gcc_nrf52.ld -o main.elf.tmp
+arm-none-eabi-objcopy -O binary main.elf.tmp main.bin.tmp
+./scripts/microapp_make.py -i main.bin.tmp include/microapp_header_symbols.ld
+Read header: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=0, checksum=0, checksumHeader=0, appBuildVersion=0, startOffset=0, reserved=0, reserved2=0)
+Calculate header checksum from: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=1413, checksum=18323, checksumHeader=0, appBuildVersion=0, startOffset=20, reserved=0, reserved2=0) [0, 1, 133, 5, 147, 71, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0]
+Final header: MicroappBinaryHeaderPacket(sdkVersion=0.1, size=1413, checksum=18323, checksumHeader=16181, appBuildVersion=0, startOffset=20, reserved=0, reserved2=0)
+arm-none-eabi-g++ -std=c++17 -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -fno-exceptions -fno-enforce-eh-specs -nostdlib -ffreestanding -fno-threadsafe-statics -Wl,--gc-sections -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float core/Arduino.c core/main.c core/microapp.c core/Serial.cpp core/Wire.cpp core/ipc/cs_IpcRamData.c -Iinclude -Linclude main.c include/microapp_header_symbols.ld -Icore -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o main.elf
+arm-none-eabi-objcopy -O binary main.elf main.bin
+arm-none-eabi-objcopy -O ihex main.elf main.hex
+scons: done building targets.
+/usr/local/lib/python3.8/dist-packages/crownstone_ble/__init__.py
+Initializing tool with bleAdapterAddress=44:03:2C:B5:28:2B
+2021-10-08 11:39:43,811 DEBUG  : Using selector: EpollSelector
+Main
+First 32 bytes of the binary:
+[0, 1, 133, 5, 147, 71, 53, 63, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 128, 181, 138, 176, 0, 175, 0, 240, 99, 248, 0, 35]
+2021-10-08 11:39:43,814 INFO   : Connecting to FD:FC:93:F8:97:BA
+2021-10-08 11:39:43,814 DEBUG  : Connecting..
+2021-10-08 11:39:43,861 DEBUG  : kienSAT_73428B, C4:4F:33:73:42:8B (-86 dBm), Object Path: /org/bluez/hci0/dev_C4_4F_33_73_42_8B
+2021-10-08 11:39:43,861 DEBUG  : D9-DF-98-98-7B-31, D9:DF:98:98:7B:31 (-86 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_31
+2021-10-08 11:39:43,863 DEBUG  : 1D-F1-D8-CA-E3-EA, 1D:F1:D8:CA:E3:EA (-52 dBm), Object Path: /org/bluez/hci0/dev_1D_F1_D8_CA_E3_EA
+2021-10-08 11:39:43,871 DEBUG  : CRWN, F7:2B:81:46:73:A7 (-81 dBm), Object Path: /org/bluez/hci0/dev_F7_2B_81_46_73_A7
+2021-10-08 11:39:43,872 DEBUG  : E3-4A-7E-46-58-00, E3:4A:7E:46:58:00 (-82 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_00
+2021-10-08 11:39:43,873 DEBUG  : E3-4A-7E-46-58-02, E3:4A:7E:46:58:02 (-83 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_02
+2021-10-08 11:39:43,875 DEBUG  : F4-1E-80-49-D7-24, F4:1E:80:49:D7:24 (-88 dBm), Object Path: /org/bluez/hci0/dev_F4_1E_80_49_D7_24
+2021-10-08 11:39:43,896 DEBUG  : D7-1D-0E-E1-D5-29, D7:1D:0E:E1:D5:29 (-85 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_29
+2021-10-08 11:39:43,911 DEBUG  : DF-7D-88-83-F9-E9, DF:7D:88:83:F9:E9 (-88 dBm), Object Path: /org/bluez/hci0/dev_DF_7D_88_83_F9_E9
+2021-10-08 11:39:43,916 DEBUG  : CRWN, F8:73:8C:8F:E4:E8 (-74 dBm), Object Path: /org/bluez/hci0/dev_F8_73_8C_8F_E4_E8
+2021-10-08 11:39:43,938 DEBUG  : HM01, EE:E1:11:59:01:35 (-60 dBm), Object Path: /org/bluez/hci0/dev_EE_E1_11_59_01_35
+2021-10-08 11:39:43,938 DEBUG  : CRWN, D7:1D:0E:E1:D5:2A (-78 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_2A
+2021-10-08 11:39:43,939 DEBUG  : CF-41-34-D3-B2-3F, CF:41:34:D3:B2:3F (-81 dBm), Object Path: /org/bluez/hci0/dev_CF_41_34_D3_B2_3F
+2021-10-08 11:39:43,939 DEBUG  : D0-DB-21-1D-39-C9, D0:DB:21:1D:39:C9 (-85 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_C9
+2021-10-08 11:39:43,942 DEBUG  : EB-6F-F2-D0-9B-31, EB:6F:F2:D0:9B:31 (-63 dBm), Object Path: /org/bluez/hci0/dev_EB_6F_F2_D0_9B_31
+2021-10-08 11:39:43,952 DEBUG  : CRWN, E4:B2:2C:85:A9:34 (-60 dBm), Object Path: /org/bluez/hci0/dev_E4_B2_2C_85_A9_34
+2021-10-08 11:39:43,964 DEBUG  : CRWN, F4:1E:80:49:D7:25 (-68 dBm), Object Path: /org/bluez/hci0/dev_F4_1E_80_49_D7_25
+2021-10-08 11:39:43,982 DEBUG  : CRWN, EB:6F:F2:D0:9B:30 (-74 dBm), Object Path: /org/bluez/hci0/dev_EB_6F_F2_D0_9B_30
+2021-10-08 11:39:43,983 DEBUG  : F8-73-8C-8F-E4-E7, F8:73:8C:8F:E4:E7 (-89 dBm), Object Path: /org/bluez/hci0/dev_F8_73_8C_8F_E4_E7
+2021-10-08 11:39:44,000 DEBUG  : 63-64-A9-06-1F-17, 63:64:A9:06:1F:17 (-82 dBm), Object Path: /org/bluez/hci0/dev_63_64_A9_06_1F_17
+2021-10-08 11:39:44,000 DEBUG  : D0-D2-58-31-65-95, D0:D2:58:31:65:95 (-73 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_95
+2021-10-08 11:39:44,004 DEBUG  : CRWN, FD:D9:0E:9A:99:9A (-50 dBm), Object Path: /org/bluez/hci0/dev_FD_D9_0E_9A_99_9A
+2021-10-08 11:39:44,037 DEBUG  : F0-DC-CB-D4-63-2D, F0:DC:CB:D4:63:2D (-69 dBm), Object Path: /org/bluez/hci0/dev_F0_DC_CB_D4_63_2D
+2021-10-08 11:39:44,043 DEBUG  : CRWN, D0:D2:58:31:65:94 (-51 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_94
+2021-10-08 11:39:44,053 DEBUG  : 63-62-D2-DF-63-F7, 63:62:D2:DF:63:F7 (-92 dBm), Object Path: /org/bluez/hci0/dev_63_62_D2_DF_63_F7
+2021-10-08 11:39:44,058 DEBUG  : D0-DB-21-1D-39-CB, D0:DB:21:1D:39:CB (-85 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CB
+2021-10-08 11:39:44,059 DEBUG  : CRWN, D9:DF:98:98:7B:32 (-57 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_32
+2021-10-08 11:39:44,070 DEBUG  : CRWN, C2:58:C4:67:34:45 (-72 dBm), Object Path: /org/bluez/hci0/dev_C2_58_C4_67_34_45
+2021-10-08 11:39:44,080 DEBUG  : D9-DF-98-98-7B-31, D9:DF:98:98:7B:31 (-87 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_31
+2021-10-08 11:39:44,089 DEBUG  : E7-A4-CD-36-B1-27, E7:A4:CD:36:B1:27 (-93 dBm), Object Path: /org/bluez/hci0/dev_E7_A4_CD_36_B1_27
+2021-10-08 11:39:44,100 DEBUG  : DF-7D-88-83-F9-E9, DF:7D:88:83:F9:E9 (-84 dBm), Object Path: /org/bluez/hci0/dev_DF_7D_88_83_F9_E9
+2021-10-08 11:39:44,122 DEBUG  : CRWN, C5:ED:09:54:09:9F (-71 dBm), Object Path: /org/bluez/hci0/dev_C5_ED_09_54_09_9F
+2021-10-08 11:39:44,130 DEBUG  : CRWN, CB:69:B8:69:14:6E (-67 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6E
+2021-10-08 11:39:44,131 DEBUG  : D0-D2-58-31-65-93, D0:D2:58:31:65:93 (-73 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_93
+2021-10-08 11:39:44,158 DEBUG  : CRWN, F7:D3:44:FD:B1:40 (-73 dBm), Object Path: /org/bluez/hci0/dev_F7_D3_44_FD_B1_40
+2021-10-08 11:39:44,159 DEBUG  : 1A-24-08-9D-83-31, 1A:24:08:9D:83:31 (-65 dBm), Object Path: /org/bluez/hci0/dev_1A_24_08_9D_83_31
+2021-10-08 11:39:44,209 DEBUG  : CS, D0:30:F7:32:B3:07 (-78 dBm), Object Path: /org/bluez/hci0/dev_D0_30_F7_32_B3_07
+2021-10-08 11:39:44,211 DEBUG  : 64-47-5D-ED-27-DF, 64:47:5D:ED:27:DF (-71 dBm), Object Path: /org/bluez/hci0/dev_64_47_5D_ED_27_DF
+2021-10-08 11:39:44,212 DEBUG  : CRWN, D0:DB:21:1D:39:CA (-63 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CA
+2021-10-08 11:39:44,213 DEBUG  : CB-69-B8-69-14-6F, CB:69:B8:69:14:6F (-69 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6F
+2021-10-08 11:39:44,213 DEBUG  : test, FD:FC:93:F8:97:BA (-60 dBm), Object Path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA
+2021-10-08 11:39:44,214 DEBUG  : E0-7F-01-13-FE-B9, E0:7F:01:13:FE:B9 (-82 dBm), Object Path: /org/bluez/hci0/dev_E0_7F_01_13_FE_B9
+2021-10-08 11:39:44,215 DEBUG  : E3-4A-7E-46-58-00, E3:4A:7E:46:58:00 (-82 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_00
+2021-10-08 11:39:44,216 DEBUG  : CRWN, FD:D9:0E:9A:99:9A (-50 dBm), Object Path: /org/bluez/hci0/dev_FD_D9_0E_9A_99_9A
+2021-10-08 11:39:44,230 DEBUG  : D9-DF-98-98-7B-31, D9:DF:98:98:7B:31 (-87 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_31
+2021-10-08 11:39:44,231 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_D9_DF_98_98_7B_31', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,231 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,231 DEBUG  : 1D-F1-D8-CA-E3-EA, 1D:F1:D8:CA:E3:EA (-52 dBm), Object Path: /org/bluez/hci0/dev_1D_F1_D8_CA_E3_EA
+2021-10-08 11:39:44,231 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_1D_F1_D8_CA_E3_EA', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,232 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,232 DEBUG  : E3-4A-7E-46-58-00, E3:4A:7E:46:58:00 (-82 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_00
+2021-10-08 11:39:44,232 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_E3_4A_7E_46_58_00', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,232 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,232 DEBUG  : F4-1E-80-49-D7-24, F4:1E:80:49:D7:24 (-88 dBm), Object Path: /org/bluez/hci0/dev_F4_1E_80_49_D7_24
+2021-10-08 11:39:44,233 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_F4_1E_80_49_D7_24', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,233 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,233 DEBUG  : D7-1D-0E-E1-D5-29, D7:1D:0E:E1:D5:29 (-85 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_29
+2021-10-08 11:39:44,233 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_D7_1D_0E_E1_D5_29', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,233 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,234 DEBUG  : DF-7D-88-83-F9-E9, DF:7D:88:83:F9:E9 (-84 dBm), Object Path: /org/bluez/hci0/dev_DF_7D_88_83_F9_E9
+2021-10-08 11:39:44,234 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_DF_7D_88_83_F9_E9', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,234 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,234 DEBUG  : D0-DB-21-1D-39-C9, D0:DB:21:1D:39:C9 (-85 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_C9
+2021-10-08 11:39:44,234 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_D0_DB_21_1D_39_C9', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,234 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,235 DEBUG  : F8-73-8C-8F-E4-E7, F8:73:8C:8F:E4:E7 (-89 dBm), Object Path: /org/bluez/hci0/dev_F8_73_8C_8F_E4_E7
+2021-10-08 11:39:44,235 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_F8_73_8C_8F_E4_E7', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,235 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,235 DEBUG  : D0-D2-58-31-65-93, D0:D2:58:31:65:93 (-73 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_93
+2021-10-08 11:39:44,235 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_D0_D2_58_31_65_93', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,235 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,235 DEBUG  : 1A-24-08-9D-83-31, 1A:24:08:9D:83:31 (-65 dBm), Object Path: /org/bluez/hci0/dev_1A_24_08_9D_83_31
+2021-10-08 11:39:44,235 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_1A_24_08_9D_83_31', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,235 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,235 DEBUG  : 64-47-5D-ED-27-DF, 64:47:5D:ED:27:DF (-71 dBm), Object Path: /org/bluez/hci0/dev_64_47_5D_ED_27_DF
+2021-10-08 11:39:44,235 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_64_47_5D_ED_27_DF', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-08 11:39:44,236 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-08 11:39:44,236 DEBUG  : E0-7F-01-13-FE-B9, E0:7F:01:13:FE:B9 (-82 dBm), Object Path: /org/bluez/hci0/dev_E0_7F_01_13_FE_B9
+2021-10-08 11:39:44,236 DEBUG  : test, FD:FC:93:F8:97:BA (-60 dBm), Object Path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA
+2021-10-08 11:39:44,236 DEBUG  : CB-69-B8-69-14-6F, CB:69:B8:69:14:6F (-69 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6F
+2021-10-08 11:39:44,245 DEBUG  : CRWN, D0:DB:21:1D:39:CA (-63 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CA
+2021-10-08 11:39:44,245 DEBUG  : CS, D0:30:F7:32:B3:07 (-78 dBm), Object Path: /org/bluez/hci0/dev_D0_30_F7_32_B3_07
+2021-10-08 11:39:44,246 DEBUG  : CRWN, F7:D3:44:FD:B1:40 (-73 dBm), Object Path: /org/bluez/hci0/dev_F7_D3_44_FD_B1_40
+2021-10-08 11:39:44,246 DEBUG  : CRWN, CB:69:B8:69:14:6E (-67 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6E
+2021-10-08 11:39:44,246 DEBUG  : CRWN, C5:ED:09:54:09:9F (-71 dBm), Object Path: /org/bluez/hci0/dev_C5_ED_09_54_09_9F
+2021-10-08 11:39:44,246 DEBUG  : E7-A4-CD-36-B1-27, E7:A4:CD:36:B1:27 (-93 dBm), Object Path: /org/bluez/hci0/dev_E7_A4_CD_36_B1_27
+2021-10-08 11:39:44,246 DEBUG  : CRWN, C2:58:C4:67:34:45 (-72 dBm), Object Path: /org/bluez/hci0/dev_C2_58_C4_67_34_45
+2021-10-08 11:39:44,246 DEBUG  : CRWN, D9:DF:98:98:7B:32 (-57 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_32
+2021-10-08 11:39:44,246 DEBUG  : D0-DB-21-1D-39-CB, D0:DB:21:1D:39:CB (-85 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CB
+2021-10-08 11:39:44,247 DEBUG  : 63-62-D2-DF-63-F7, 63:62:D2:DF:63:F7 (-92 dBm), Object Path: /org/bluez/hci0/dev_63_62_D2_DF_63_F7
+2021-10-08 11:39:44,247 DEBUG  : CRWN, D0:D2:58:31:65:94 (-51 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_94
+2021-10-08 11:39:44,247 DEBUG  : F0-DC-CB-D4-63-2D, F0:DC:CB:D4:63:2D (-69 dBm), Object Path: /org/bluez/hci0/dev_F0_DC_CB_D4_63_2D
+2021-10-08 11:39:44,247 DEBUG  : CRWN, FD:D9:0E:9A:99:9A (-50 dBm), Object Path: /org/bluez/hci0/dev_FD_D9_0E_9A_99_9A
+2021-10-08 11:39:44,247 DEBUG  : D0-D2-58-31-65-95, D0:D2:58:31:65:95 (-73 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_95
+2021-10-08 11:39:44,247 DEBUG  : 63-64-A9-06-1F-17, 63:64:A9:06:1F:17 (-82 dBm), Object Path: /org/bluez/hci0/dev_63_64_A9_06_1F_17
+2021-10-08 11:39:44,247 DEBUG  : CRWN, EB:6F:F2:D0:9B:30 (-74 dBm), Object Path: /org/bluez/hci0/dev_EB_6F_F2_D0_9B_30
+2021-10-08 11:39:44,248 DEBUG  : CRWN, F4:1E:80:49:D7:25 (-68 dBm), Object Path: /org/bluez/hci0/dev_F4_1E_80_49_D7_25
+2021-10-08 11:39:44,248 DEBUG  : CRWN, E4:B2:2C:85:A9:34 (-60 dBm), Object Path: /org/bluez/hci0/dev_E4_B2_2C_85_A9_34
+2021-10-08 11:39:44,248 DEBUG  : EB-6F-F2-D0-9B-31, EB:6F:F2:D0:9B:31 (-63 dBm), Object Path: /org/bluez/hci0/dev_EB_6F_F2_D0_9B_31
+2021-10-08 11:39:44,248 DEBUG  : CF-41-34-D3-B2-3F, CF:41:34:D3:B2:3F (-81 dBm), Object Path: /org/bluez/hci0/dev_CF_41_34_D3_B2_3F
+2021-10-08 11:39:44,248 DEBUG  : CRWN, D7:1D:0E:E1:D5:2A (-78 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_2A
+2021-10-08 11:39:44,248 DEBUG  : HM01, EE:E1:11:59:01:35 (-60 dBm), Object Path: /org/bluez/hci0/dev_EE_E1_11_59_01_35
+2021-10-08 11:39:44,248 DEBUG  : CRWN, F8:73:8C:8F:E4:E8 (-74 dBm), Object Path: /org/bluez/hci0/dev_F8_73_8C_8F_E4_E8
+2021-10-08 11:39:44,248 DEBUG  : E3-4A-7E-46-58-02, E3:4A:7E:46:58:02 (-83 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_02
+2021-10-08 11:39:44,248 DEBUG  : CRWN, F7:2B:81:46:73:A7 (-81 dBm), Object Path: /org/bluez/hci0/dev_F7_2B_81_46_73_A7
+2021-10-08 11:39:44,248 DEBUG  : kienSAT_73428B, C4:4F:33:73:42:8B (-86 dBm), Object Path: /org/bluez/hci0/dev_C4_4F_33_73_42_8B
+2021-10-08 11:39:44,254 DEBUG  : Connecting to BLE device @ FD:FC:93:F8:97:BA with 44:03:2C:B5:28:2B
+2021-10-08 11:39:44,482 DEBUG  : Connection successful.
+2021-10-08 11:39:45,231 DEBUG  : Get Services...
+2021-10-08 11:39:45,244 DEBUG  : 
+Primary Service
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017
+	24f00000-7d10-4805-bfc1-7663a01c3bff
+	Unknown
+2021-10-08 11:39:45,244 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char002a
+	24f00009-7d10-4805-bfc1-7663a01c3bff
+	Unknown
+2021-10-08 11:39:45,245 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char002a/desc002e
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,245 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char002a/desc002d
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,245 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char002a/desc002c
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+2021-10-08 11:39:45,245 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0026
+	24f0000f-7d10-4805-bfc1-7663a01c3bff
+	Unknown
+2021-10-08 11:39:45,245 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0026/desc0029
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,245 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0026/desc0028
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,246 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0021
+	24f0000e-7d10-4805-bfc1-7663a01c3bff
+	Unknown
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0021/desc0025
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0021/desc0024
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0021/desc0023
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+2021-10-08 11:39:45,246 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c
+	24f0000d-7d10-4805-bfc1-7663a01c3bff
+	Unknown
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c/desc0020
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c/desc001f
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c/desc001e
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+2021-10-08 11:39:45,246 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018
+	24f0000c-7d10-4805-bfc1-7663a01c3bff
+	Unknown
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018/desc001b
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,246 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018/desc001a
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,247 DEBUG  : 
+Primary Service
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e
+	0000180a-0000-1000-8000-00805f9b34fb
+	Device Information
+2021-10-08 11:39:45,247 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e/char0013
+	00002a26-0000-1000-8000-00805f9b34fb
+	Firmware Revision String
+2021-10-08 11:39:45,247 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e/char0013/desc0016
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,247 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e/char0013/desc0015
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,247 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e/char000f
+	00002a27-0000-1000-8000-00805f9b34fb
+	Hardware Revision String
+2021-10-08 11:39:45,247 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e/char000f/desc0012
+	00002904-0000-1000-8000-00805f9b34fb
+	Characteristic Presentation Format
+2021-10-08 11:39:45,247 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000e/char000f/desc0011
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+2021-10-08 11:39:45,247 DEBUG  : 
+Primary Service
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000a
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+2021-10-08 11:39:45,247 DEBUG  : 
+Characteristic
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000a/char000b
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+2021-10-08 11:39:45,247 DEBUG  : 
+Descriptor
+	/org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service000a/char000b/desc000d
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+2021-10-08 11:39:45,249 INFO   : Connected
+2021-10-08 11:39:45,250 DEBUG  : hasCharacteristic characteristicUUID=24f0000e-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,250 DEBUG  : readCharacteristicWithoutEncryption serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000e-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,502 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0021, domain: org.bluez.GattCharacteristic1, body: {'Value': [151, 102, 24, 5, 253, 16, 212, 34, 104, 24, 137, 184, 165, 95, 215, 40]}
+2021-10-08 11:39:45,503 DEBUG  : Read Characteristic 24f0000e-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0021: bytearray(b'\x97f\x18\x05\xfd\x10\xd4"h\x18\x89\xb8\xa5_\xd7(')
+2021-10-08 11:39:45,505 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,505 DEBUG  : setupSingleNotification serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,508 DEBUG  : setupSingleNotification: subscribe for notifications.
+2021-10-08 11:39:45,508 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,509 DEBUG  : subscribe to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,599 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Notifying': True}
+2021-10-08 11:39:45,600 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Notifying': True}, []]
+2021-10-08 11:39:45,601 DEBUG  : setupSingleNotification: writeCommand().
+2021-10-08 11:39:45,601 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,601 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 90, 0, 0, 0]
+2021-10-08 11:39:45,696 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'\xc0B\t\x00\xe7B\nY\x1e;\xac\xcd{\xbf$\xa9_\xcc\x14N')
+2021-10-08 11:39:45,702 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 160, 130, 33, 2, 235, 175, 216, 118, 117, 32, 165, 156, 162, 172, 106, 81, 174, 29, 41]}
+2021-10-08 11:39:45,702 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 160, 130, 33, 2, 235, 175, 216, 118, 117, 32, 165, 156, 162, 172, 106, 81, 174, 29, 41]}, []]
+2021-10-08 11:39:45,703 DEBUG  : Received part 0
+2021-10-08 11:39:45,705 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [1, 114, 44, 230, 121, 70, 213, 248, 149, 25, 174, 184, 7, 98, 62, 136, 203, 75, 213, 211]}
+2021-10-08 11:39:45,705 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [1, 114, 44, 230, 121, 70, 213, 248, 149, 25, 174, 184, 7, 98, 62, 136, 203, 75, 213, 211]}, []]
+2021-10-08 11:39:45,706 DEBUG  : Received part 1
+2021-10-08 11:39:45,707 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 105, 45, 53, 86, 103, 48, 255, 253, 173, 84, 73, 157, 209, 186]}
+2021-10-08 11:39:45,708 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 105, 45, 53, 86, 103, 48, 255, 253, 173, 84, 73, 157, 209, 186]}, []]
+2021-10-08 11:39:45,708 DEBUG  : Received part 255
+2021-10-08 11:39:45,708 DEBUG  : Received last part. Merged data: [160, 130, 33, 2, 235, 175, 216, 118, 117, 32, 165, 156, 162, 172, 106, 81, 174, 29, 41, 114, 44, 230, 121, 70, 213, 248, 149, 25, 174, 184, 7, 98, 62, 136, 203, 75, 213, 211, 105, 45, 53, 86, 103, 48, 255, 253, 173, 84, 73, 157, 209, 186]
+2021-10-08 11:39:45,710 DEBUG  : Result: [5, 90, 0, 0, 0, 28, 0, 0, 1, 0, 16, 0, 1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 14, 122, 76, 236, 15, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:45,711 DEBUG  : _killNotificationLoop
+2021-10-08 11:39:45,809 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,810 INFO   : getMicroappInfo <class 'crownstone_core.packets.ResultPacket.ResultPacket'>({'commandType': <ControlType.MICROAPP_GET_INFO: 90>, 'protocol': 5, 'size': 28, 'commandTypeUInt16': 90, 'resultCode': <ResultValue.SUCCESS: 0>, 'valid': True, 'payload': [0, 1, 0, 16, 0, 1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 14, 122, 76, 236, 15, 0, 255, 255, 0, 0, 0, 0]})
+MicroappInfoPacket(protocol=0, maxApps=1, maxAppSize=4096, maxChunkSize=256, maxRamUsage=512, sdkVersion=0.1, appsStatus=[MicroappStatusPacket(buildVersion=0, sdkVersion=0.1, checksum=31246, tests=MicroappTestsPacket(raw=[15, 0], hasData=True, checksum=3, enabled=True, boot=0, memory=0, reserved=[0]), functionTrying=255, functionFailed=255, functionsPassed=[])])
+Remove data at index 0
+2021-10-08 11:39:45,812 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,813 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:45,817 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:45,818 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,818 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:45,819 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:45,820 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 93, 0, 2, 0, 0, 0]
+2021-10-08 11:39:45,947 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'N\x1aG\x00\x1f>\x14by\xf5;3b\x83C\xa9f\x8de\x06')
+2021-10-08 11:39:45,953 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 197, 199, 42, 2, 37, 59, 211, 12, 79, 187, 0, 254, 8, 187, 42, 74, 252, 123, 115]}
+2021-10-08 11:39:45,954 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 197, 199, 42, 2, 37, 59, 211, 12, 79, 187, 0, 254, 8, 187, 42, 74, 252, 123, 115]}, []]
+2021-10-08 11:39:45,954 DEBUG  : Received part 0
+2021-10-08 11:39:45,955 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 124]}
+2021-10-08 11:39:45,956 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 124]}, []]
+2021-10-08 11:39:45,956 DEBUG  : Received part 255
+2021-10-08 11:39:45,956 DEBUG  : Received last part. Merged data: [197, 199, 42, 2, 37, 59, 211, 12, 79, 187, 0, 254, 8, 187, 42, 74, 252, 123, 115, 124]
+2021-10-08 11:39:45,957 DEBUG  : Result: [5, 93, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:45,957 DEBUG  : onMergeNotification
+2021-10-08 11:39:46,049 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:46,050 DEBUG  : Waiting for success.
+2021-10-08 11:39:46,051 DEBUG  : continue
+2021-10-08 11:39:46,089 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 4, 81, 39, 2, 199, 155, 2, 105, 206, 134, 81, 30, 136, 236, 178, 6, 120, 211, 80]}
+2021-10-08 11:39:46,089 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 4, 81, 39, 2, 199, 155, 2, 105, 206, 134, 81, 30, 136, 236, 178, 6, 120, 211, 80]}, []]
+2021-10-08 11:39:46,089 DEBUG  : Received part 0
+2021-10-08 11:39:46,090 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 131]}
+2021-10-08 11:39:46,090 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 131]}, []]
+2021-10-08 11:39:46,090 DEBUG  : Received part 255
+2021-10-08 11:39:46,090 DEBUG  : Received last part. Merged data: [4, 81, 39, 2, 199, 155, 2, 105, 206, 134, 81, 30, 136, 236, 178, 6, 120, 211, 80, 131]
+2021-10-08 11:39:46,091 DEBUG  : Result: [5, 93, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:46,091 DEBUG  : onMergeNotification
+2021-10-08 11:39:46,152 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:46,153 DEBUG  : Success.
+2021-10-08 11:39:46,153 DEBUG  : finished
+2021-10-08 11:39:46,153 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:46,153 INFO   : Removed app 0
+2021-10-08 11:39:46.153804 Start upload with chunkSize=192
+2021-10-08 11:39:46,153 INFO   : Upload microapp chunk index=0 offset=0 size=192
+2021-10-08 11:39:46,154 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:46,154 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:46,158 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:46,159 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:46,159 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:46,159 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:46,159 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 0, 0, 0, 1, 133, 5, 147, 71, 53, 63, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 128, 181, 138, 176, 0, 175, 0, 240, 99, 248, 0, 35, 135, 248, 35, 48, 0, 35, 59, 113, 1, 35, 135, 248, 34, 48, 37, 75, 251, 97, 0, 35, 251, 132, 251, 140, 3, 43, 18, 216, 251, 140, 219, 0, 250, 105, 34, 250, 3, 241, 250, 140, 151, 248, 34, 48, 19, 68, 202, 178, 7, 241, 40, 1, 11, 68, 3, 248, 36, 44, 251, 140, 1, 51, 251, 132, 233, 231, 151, 248, 34, 48, 4, 51, 135, 248, 34, 48, 22, 75, 251, 97, 0, 35, 187, 132, 187, 140, 3, 43, 18, 216, 187, 140, 219, 0, 250, 105, 34, 250, 3, 241, 186, 140, 151, 248, 34, 48, 19, 68, 202, 178, 7, 241, 40, 1, 11, 68, 3, 248, 36, 44, 187, 140, 1, 51, 187, 132, 233, 231, 151, 248, 34, 48, 4, 51, 135, 248, 34, 48, 151, 248, 34, 32, 59, 29, 25, 70, 3, 32, 0, 240, 224, 248, 2, 75, 24, 70, 40, 55, 189, 70]
+2021-10-08 11:39:46,826 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'\x03\xb4\xdd\x008\x94*\xb8\x90\x88\xf2\xad%\xf4\x13Px\xf84\x85t#}y:s\xce\xffy\x98\xf8\xbc\xa3S\xbf\x9e8\xb3\xa5\xe0y\xa6\xde\xc3\t2\x00!E\xffc\xe1h\\C\x1a\xda\x0b\xc8\xe7\x99,\x94\xc7&\x8cM\x08\xfeEV+\x18b\xd3\x8a\xa2L\x9c\x8cm\x89\xea5\x8a\xa3\xd7l[\x80lU\xac\x9a\xcf\xce\xbc\xbfl\xa6\xdc/y\x87s\\9\x93\xfc\xd6X\xbdi\xaao\xf4\xc0%z\xab\xd6\x98>r.=^\x1a\xf1\x08e@hq\xe4E\x84k\x18[f\x90\xde\xb8\xfdO\x86^i|\x85w8\xbf\xd5\xf8s\x05\xc7\xa7\xc1\x98?\xdag(\xe3\xaci_\xd2\x9d\xde\xb3rI\x84V;Qn>\x00u\xb6jw\xb3{\x854}\xc4\x1e\x92\xa9ae\xe4q\x83&\x9c!F\rvZZ:\nh')
+2021-10-08 11:39:46,828 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 117, 60, 228, 2, 109, 174, 95, 214, 63, 198, 7, 191, 1, 145, 50, 74, 29, 54, 108]}
+2021-10-08 11:39:46,829 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 117, 60, 228, 2, 109, 174, 95, 214, 63, 198, 7, 191, 1, 145, 50, 74, 29, 54, 108]}, []]
+2021-10-08 11:39:46,829 DEBUG  : Received part 0
+2021-10-08 11:39:46,831 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 207]}
+2021-10-08 11:39:46,831 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 207]}, []]
+2021-10-08 11:39:46,832 DEBUG  : Received part 255
+2021-10-08 11:39:46,832 DEBUG  : Received last part. Merged data: [117, 60, 228, 2, 109, 174, 95, 214, 63, 198, 7, 191, 1, 145, 50, 74, 29, 54, 108, 207]
+2021-10-08 11:39:46,834 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:46,834 DEBUG  : onMergeNotification
+2021-10-08 11:39:46,915 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 230, 215, 59, 2, 220, 103, 167, 224, 235, 119, 237, 190, 86, 0, 52, 126, 150, 40, 105]}
+2021-10-08 11:39:46,915 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 230, 215, 59, 2, 220, 103, 167, 224, 235, 119, 237, 190, 86, 0, 52, 126, 150, 40, 105]}, []]
+2021-10-08 11:39:46,915 DEBUG  : Received part 0
+2021-10-08 11:39:46,917 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 95]}
+2021-10-08 11:39:46,918 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 95]}, []]
+2021-10-08 11:39:46,918 DEBUG  : Received part 255
+2021-10-08 11:39:46,919 DEBUG  : Received last part. Merged data: [230, 215, 59, 2, 220, 103, 167, 224, 235, 119, 237, 190, 86, 0, 52, 126, 150, 40, 105, 95]
+2021-10-08 11:39:46,920 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:46,920 DEBUG  : onMergeNotification
+2021-10-08 11:39:46,928 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:46,928 DEBUG  : Waiting for success.
+2021-10-08 11:39:46,929 DEBUG  : continue
+2021-10-08 11:39:47,031 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:47,032 DEBUG  : Success.
+2021-10-08 11:39:47,032 DEBUG  : finished
+2021-10-08 11:39:47,032 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,033 INFO   : uploaded chunk offset=0
+2021-10-08 11:39:47,033 INFO   : Upload microapp chunk index=0 offset=192 size=192
+2021-10-08 11:39:47,033 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,034 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:47,037 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:47,037 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,037 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:47,038 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,038 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 192, 0, 128, 189, 0, 191, 125, 147, 6, 0, 217, 144, 6, 0, 8, 181, 255, 247, 161, 255, 79, 240, 255, 48, 8, 189, 1, 75, 24, 96, 0, 240, 82, 185, 0, 247, 0, 32, 5, 75, 6, 74, 6, 72, 131, 66, 4, 210, 82, 248, 4, 27, 67, 248, 4, 27, 248, 231, 112, 71, 0, 191, 0, 247, 0, 32, 133, 149, 6, 0, 0, 247, 0, 32, 3, 70, 10, 72, 2, 34, 2, 112, 131, 112, 26, 10, 8, 75, 66, 112, 27, 104, 131, 113, 26, 14, 194, 112, 26, 12, 2, 113, 26, 10, 7, 35, 66, 113, 128, 248, 32, 48, 0, 240, 15, 184, 0, 191, 4, 247, 0, 32, 0, 247, 0, 32, 255, 247, 228, 191, 3, 70, 0, 32, 26, 92, 18, 177, 1, 48, 32, 40, 250, 209, 112, 71, 48, 181, 144, 248, 32, 48, 32, 43, 137, 176, 4, 70, 3, 217, 79, 240, 255, 48, 9, 176, 48, 189, 2, 171, 0, 34, 25, 70, 16, 70, 1, 50, 24, 42, 3, 248, 1, 11, 250, 209, 141, 248, 7, 0, 13, 241, 7, 3]
+2021-10-08 11:39:47,653 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'\xa7I\x9d\x00I\x14$\xcdT\x89\x92\xb6\xbc\xccA\xec\x86E/!B\xe1Tu\x178%+=K@*\xde\xa8\x8aH_s\x85\x0e mo\xe2d7"\xb3a\x82\x07\xac\xe7r\xc5\xe7\xbe\x03q\x9eY\xee\x18\xd1u\x9b%\xb5\xc5\x86\xe4\x87v\xa2\xc7*\x85"iW\xda_C\xbc\xd3\x0cs\x8c$Z\x99\x96\x01lle\xea\x89\xb0\xa6V^R\xe87.\xb4\x93\xf6!5\xb5\xf6\x87L\xc4\xaf`\xe7TK<$\x07\xa0\x1e\xb8m\xc8\x0fi1\x0f\x0b6%\xfe\x01\x11E\x0cX\xe11\x80\xc8V\xfc=\x1e\xca\xbe\x98+\x16\x90N\x14\x15\xb7&7B\x10&\xd2OHU\x80\xc4N\x82\xa7K\xff\xbe\x02g*Jgq\x85\xa7\xeb\x8dN\xbfO\xf8\x84\xbc\xd7\xda\xc5\x1e>\xbf=5\xcb4pG<\xab\xc0\xdf\xa6\xcb\xce')
+2021-10-08 11:39:47,656 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 253, 31, 83, 2, 146, 113, 39, 72, 37, 226, 250, 118, 103, 2, 56, 57, 90, 45, 115]}
+2021-10-08 11:39:47,657 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 253, 31, 83, 2, 146, 113, 39, 72, 37, 226, 250, 118, 103, 2, 56, 57, 90, 45, 115]}, []]
+2021-10-08 11:39:47,657 DEBUG  : Received part 0
+2021-10-08 11:39:47,659 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 163]}
+2021-10-08 11:39:47,659 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 163]}, []]
+2021-10-08 11:39:47,659 DEBUG  : Received part 255
+2021-10-08 11:39:47,659 DEBUG  : Received last part. Merged data: [253, 31, 83, 2, 146, 113, 39, 72, 37, 226, 250, 118, 103, 2, 56, 57, 90, 45, 115, 163]
+2021-10-08 11:39:47,660 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:47,660 DEBUG  : onMergeNotification
+2021-10-08 11:39:47,695 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 164, 164, 165, 2, 251, 186, 0, 39, 182, 74, 80, 169, 158, 212, 15, 50, 9, 43, 247]}
+2021-10-08 11:39:47,696 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 164, 164, 165, 2, 251, 186, 0, 39, 182, 74, 80, 169, 158, 212, 15, 50, 9, 43, 247]}, []]
+2021-10-08 11:39:47,696 DEBUG  : Received part 0
+2021-10-08 11:39:47,697 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 163]}
+2021-10-08 11:39:47,698 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 163]}, []]
+2021-10-08 11:39:47,698 DEBUG  : Received part 255
+2021-10-08 11:39:47,698 DEBUG  : Received last part. Merged data: [164, 164, 165, 2, 251, 186, 0, 39, 182, 74, 80, 169, 158, 212, 15, 50, 9, 43, 247, 163]
+2021-10-08 11:39:47,699 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:47,699 DEBUG  : onMergeNotification
+2021-10-08 11:39:47,765 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:47,766 DEBUG  : Waiting for success.
+2021-10-08 11:39:47,766 DEBUG  : continue
+2021-10-08 11:39:47,867 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:47,867 DEBUG  : Success.
+2021-10-08 11:39:47,868 DEBUG  : finished
+2021-10-08 11:39:47,868 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,868 INFO   : uploaded chunk offset=192
+2021-10-08 11:39:47,869 INFO   : Upload microapp chunk index=0 offset=384 size=192
+2021-10-08 11:39:47,869 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,870 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:47,873 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:47,874 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,874 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:47,874 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:47,874 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 128, 1, 1, 32, 0, 240, 167, 248, 5, 70, 3, 32, 0, 240, 225, 248, 0, 40, 229, 208, 157, 248, 8, 0, 5, 67, 21, 240, 255, 15, 223, 209, 157, 248, 10, 32, 157, 248, 9, 48, 67, 234, 2, 35, 157, 248, 11, 32, 67, 234, 2, 67, 157, 248, 12, 32, 83, 234, 2, 99, 208, 208, 148, 248, 32, 16, 32, 70, 152, 71, 205, 231, 0, 0, 56, 181, 4, 120, 16, 72, 2, 43, 4, 112, 157, 248, 16, 64, 67, 112, 132, 112, 1, 209, 28, 42, 12, 220, 29, 42, 168, 191, 29, 34, 20, 70, 10, 74, 0, 35, 156, 66, 6, 221, 205, 92, 2, 248, 1, 91, 1, 51, 248, 231, 28, 36, 244, 231, 227, 28, 128, 248, 32, 48, 2, 72, 255, 247, 163, 255, 32, 70, 56, 189, 0, 191, 4, 247, 0, 32, 7, 247, 0, 32, 48, 180, 157, 248, 8, 80, 26, 177, 2, 149, 48, 188, 255, 247, 208, 191, 16, 70, 48, 188, 112, 71, 31, 181, 4, 70, 8, 70, 3, 145, 255, 247, 131, 255, 0, 35, 2, 70, 0, 147]
+2021-10-08 11:39:48,425 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b"[\x1a\x0e\x00\xfcm\xf5\xd7\xbd\xef\xc3?EM\x13\x1d\xf3\x85\x86\x83\xe3\x85\x04FY\'\xfa/\xe5\xecK\xf2\xb8\xce\xe7z\xed\x00:\x01wN0\xfd\x81~\x9f\xe58\xee\x7f<k\xb5\x8a\xddp\x05\xa1\xc2U\r\x04O\xd7\x0e\xd7\t\x9d\xf8t\xa4\xde\xee\xed_\xdd\x81\x00\x7f9\x0f7=\x8a\xef\x1b\xdd\xffF\xe0\xb5p\xcbLgS\xca\xd6\x8c\x0b\x00&\xdcYs\xf8\xe7P\xaa\x87\xd5UC/\x86,\x1b\x0c+^\x03\x1a\xb5_\\7t\x95\x0e\xa5\xe5\x9d\x1a\x05i\xee\xfb\x0e\x1dD+\xd1\xf7,\xacW\xdf\x84t\x1f\xfa$K2YUKr\x8ew\x0e\x9cgE\x00\x0c\x85\xf1\xab\xcd^%\xfe\x91\x07\xbe\x08\xec\x81-\x92w,\x10|\xe9\x9a3\x07]\xc2\xba\x9cp\xc6^\x0c\xe7\xaf\x99y\x7fm\x88m\xfd]7\xeb\\\xe6")
+2021-10-08 11:39:48,432 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 122, 193, 56, 2, 160, 10, 137, 235, 230, 178, 132, 29, 198, 183, 239, 28, 124, 26, 80]}
+2021-10-08 11:39:48,432 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 122, 193, 56, 2, 160, 10, 137, 235, 230, 178, 132, 29, 198, 183, 239, 28, 124, 26, 80]}, []]
+2021-10-08 11:39:48,432 DEBUG  : Received part 0
+2021-10-08 11:39:48,476 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 42]}
+2021-10-08 11:39:48,476 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 42]}, []]
+2021-10-08 11:39:48,476 DEBUG  : Received part 255
+2021-10-08 11:39:48,476 DEBUG  : Received last part. Merged data: [122, 193, 56, 2, 160, 10, 137, 235, 230, 178, 132, 29, 198, 183, 239, 28, 124, 26, 80, 42]
+2021-10-08 11:39:48,479 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:48,480 DEBUG  : onMergeNotification
+2021-10-08 11:39:48,481 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 141, 96, 132, 2, 188, 62, 78, 207, 146, 27, 202, 104, 94, 246, 144, 76, 179, 54, 118]}
+2021-10-08 11:39:48,481 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 141, 96, 132, 2, 188, 62, 78, 207, 146, 27, 202, 104, 94, 246, 144, 76, 179, 54, 118]}, []]
+2021-10-08 11:39:48,482 DEBUG  : Received part 0
+2021-10-08 11:39:48,482 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 139]}
+2021-10-08 11:39:48,483 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 139]}, []]
+2021-10-08 11:39:48,483 DEBUG  : Received part 255
+2021-10-08 11:39:48,483 DEBUG  : Received last part. Merged data: [141, 96, 132, 2, 188, 62, 78, 207, 146, 27, 202, 104, 94, 246, 144, 76, 179, 54, 118, 139]
+2021-10-08 11:39:48,485 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:48,485 DEBUG  : onMergeNotification
+2021-10-08 11:39:48,526 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:48,526 DEBUG  : Waiting for success.
+2021-10-08 11:39:48,527 DEBUG  : continue
+2021-10-08 11:39:48,628 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:48,628 DEBUG  : Success.
+2021-10-08 11:39:48,629 DEBUG  : finished
+2021-10-08 11:39:48,629 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:48,629 INFO   : uploaded chunk offset=384
+2021-10-08 11:39:48,630 INFO   : Upload microapp chunk index=0 offset=576 size=192
+2021-10-08 11:39:48,630 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:48,631 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:48,635 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:48,635 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:48,636 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:48,636 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:48,636 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 64, 2, 3, 153, 2, 35, 32, 70, 255, 247, 231, 255, 4, 176, 16, 189, 66, 120, 3, 120, 19, 68, 2, 29, 28, 48, 18, 248, 1, 27, 11, 68, 144, 66, 155, 178, 249, 209, 216, 178, 0, 235, 19, 35, 195, 243, 15, 32, 24, 68, 192, 67, 128, 178, 112, 71, 0, 0, 45, 233, 240, 65, 21, 70, 9, 179, 5, 40, 33, 216, 24, 42, 33, 216, 28, 35, 67, 67, 16, 78, 240, 84, 192, 235, 192, 0, 132, 0, 6, 235, 3, 8, 39, 29, 55, 68, 136, 248, 1, 32, 56, 70, 0, 240, 124, 248, 197, 241, 24, 2, 0, 33, 120, 25, 0, 240, 16, 249, 48, 25, 255, 247, 202, 255, 168, 248, 2, 0, 0, 32, 189, 232, 240, 129, 5, 32, 251, 231, 1, 32, 249, 231, 2, 32, 247, 231, 0, 255, 0, 32, 45, 233, 240, 71, 31, 70, 13, 70, 73, 179, 5, 40, 41, 216, 28, 33, 25, 78, 65, 67, 6, 235, 1, 8, 116, 92, 132, 66, 35, 209, 152, 248, 1, 160, 186, 241, 24, 15, 32, 216, 146, 69, 32, 216]
+2021-10-08 11:39:49,210 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 142, 81, 50, 2, 192, 163, 87, 172, 244, 123, 72, 91, 95, 46, 51, 32, 180, 226, 212]}
+2021-10-08 11:39:49,210 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 142, 81, 50, 2, 192, 163, 87, 172, 244, 123, 72, 91, 95, 46, 51, 32, 180, 226, 212]}, []]
+2021-10-08 11:39:49,211 DEBUG  : Received part 0
+2021-10-08 11:39:49,211 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b"\xc4q\xb2\x00\xf3\xd5~\x13k\xeb\xcb\x17\xd2I\x18\x07\xd0E\n\x95G\x7f\x8a\xafW\x8b\x9f4q/O\xb5\xd8\xce\xcf\xc03t\xa8M\nm\r\xf3\xb0!q-\x0b\xec0Mc\xb6`-\xd7\xfc\xff\'O(\xd9\x1a9\x07\xde@\xd3\x14TV\x1f\xab\xd7<\xe4x\x03\x02\x9e\xf1\xa0\x94\x88\xab\xdck\x9e\xee\x12\x884/\xe1\xca\xbc-\x10\xd3\xde \xf6;\xe0\xdc\xaa\xeb1(\x05\xea\x15Qytn\xb8~\xd9\xce\xcc@\xcc\xbe;C\xfcH\xa4F\\\xde\xdd\x9co\xec \x8c\xcbF\xa7\x96H;\x9d\\\x15\xa2\xda\x0c\x8e)I{\xd0\x11\xcd\x86\x82(\x9e\xd2k\\\xea\xb0\xab\xa2\xb9\xa1\xc50h0\'\xf7\xa6\xec\xbe6U~\xb81\xee\xa5\xe6\x01\xe2\xc9V\xc8\r4\x7f\xbc\xe9>\xf7U\x0fr\xb8e\xb6\xa9\xcb\xff\xe2\xa7\xbe")
+2021-10-08 11:39:49,212 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 189]}
+2021-10-08 11:39:49,212 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 189]}, []]
+2021-10-08 11:39:49,213 DEBUG  : Received part 255
+2021-10-08 11:39:49,213 DEBUG  : Received last part. Merged data: [142, 81, 50, 2, 192, 163, 87, 172, 244, 123, 72, 91, 95, 46, 51, 32, 180, 226, 212, 189]
+2021-10-08 11:39:49,214 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:49,214 DEBUG  : onMergeNotification
+2021-10-08 11:39:49,312 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:49,313 DEBUG  : Waiting for success.
+2021-10-08 11:39:49,314 DEBUG  : continue
+2021-10-08 11:39:49,353 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 100, 93, 15, 2, 129, 88, 203, 209, 133, 96, 114, 206, 225, 247, 255, 92, 202, 123, 50]}
+2021-10-08 11:39:49,353 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 100, 93, 15, 2, 129, 88, 203, 209, 133, 96, 114, 206, 225, 247, 255, 92, 202, 123, 50]}, []]
+2021-10-08 11:39:49,354 DEBUG  : Received part 0
+2021-10-08 11:39:49,359 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 29]}
+2021-10-08 11:39:49,359 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 29]}, []]
+2021-10-08 11:39:49,360 DEBUG  : Received part 255
+2021-10-08 11:39:49,360 DEBUG  : Received last part. Merged data: [100, 93, 15, 2, 129, 88, 203, 209, 133, 96, 114, 206, 225, 247, 255, 92, 202, 123, 50, 29]
+2021-10-08 11:39:49,361 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:49,361 DEBUG  : onMergeNotification
+2021-10-08 11:39:49,415 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:49,416 DEBUG  : Success.
+2021-10-08 11:39:49,416 DEBUG  : finished
+2021-10-08 11:39:49,416 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:49,416 INFO   : uploaded chunk offset=576
+2021-10-08 11:39:49,416 INFO   : Upload microapp chunk index=0 offset=768 size=192
+2021-10-08 11:39:49,417 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:49,417 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:49,421 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:49,422 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:49,422 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:49,422 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:49,423 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 0, 3, 196, 235, 196, 4, 6, 235, 132, 0, 255, 247, 161, 255, 184, 248, 2, 48, 131, 66, 79, 234, 132, 9, 22, 209, 9, 241, 4, 1, 82, 70, 49, 68, 40, 70, 0, 240, 61, 248, 152, 248, 1, 48, 59, 112, 0, 32, 189, 232, 240, 135, 5, 32, 251, 231, 1, 32, 249, 231, 4, 32, 247, 231, 2, 32, 245, 231, 3, 32, 243, 231, 6, 32, 241, 231, 0, 191, 0, 255, 0, 32, 2, 75, 192, 235, 192, 0, 3, 235, 128, 0, 112, 71, 0, 255, 0, 32, 4, 75, 5, 72, 26, 104, 210, 7, 95, 191, 3, 73, 1, 34, 10, 112, 26, 96, 112, 71, 40, 247, 0, 32, 44, 247, 0, 32, 8, 181, 255, 247, 239, 255, 8, 189, 8, 181, 255, 247, 235, 255, 4, 73, 255, 247, 79, 255, 79, 244, 122, 112, 255, 247, 210, 254, 0, 32, 8, 189, 116, 149, 6, 0, 132, 70, 65, 234, 0, 3, 19, 240, 3, 3, 109, 209, 64, 58, 65, 211, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59]
+2021-10-08 11:39:49,936 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b"\xb3\xfc\x1f\x00\x00\x99j5\xd2\xf9\xac\xbc\xd9\xde:c\x02Z\x94\nW\xaf\xab\x16\x85$TYa\x19\xaf\xba\xa2\xb0N\xac\xd3l\x89\xadr\x03\xbf5*;\n\x0c\xd0{\tBWN?]L\xa6\xaaX\x08\xf9\x06\xa4XYT\xe5\x8dS\xb5\x99\xf4\xa1\xa2wo\xad\xf2\xc7\n\xc6s\x82\x01*2\xce\xf1\xdb \x15\xf3\xf6V\x82\xfe\x1b9f\xf8\x9c\xc4\tkr(\xe4\x91\xaf\xf8\xca\xd7}e\xfc\xb6\x12\x14\x084\xe4\xf9+}\xe9\xdd\xaeW\xed\x01,\x8f\x06-:U\'\xcc\xd1\x8c\xd6).6(vC\xa7`\xeb\x15\xd5\x06\\\x16\x00>\xa7Nud\x00\x0c\x9fC\xd9\'\xb1Z\xechLI\xecv\x7fC\xaexI\xbb\x117O\xbd\x96l}\xf0\x12\xb8\xd0\x02\xef\x92\xad\r\xe6)\xbb\xd6@~\xbd\x7f\xd9\xf9\xeb\xc5}\xa2")
+2021-10-08 11:39:49,945 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 119, 194, 211, 2, 208, 34, 238, 84, 67, 33, 59, 91, 244, 91, 148, 181, 185, 208, 220]}
+2021-10-08 11:39:49,945 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 119, 194, 211, 2, 208, 34, 238, 84, 67, 33, 59, 91, 244, 91, 148, 181, 185, 208, 220]}, []]
+2021-10-08 11:39:49,945 DEBUG  : Received part 0
+2021-10-08 11:39:49,946 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 139]}
+2021-10-08 11:39:49,946 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 139]}, []]
+2021-10-08 11:39:49,946 DEBUG  : Received part 255
+2021-10-08 11:39:49,946 DEBUG  : Received last part. Merged data: [119, 194, 211, 2, 208, 34, 238, 84, 67, 33, 59, 91, 244, 91, 148, 181, 185, 208, 220, 139]
+2021-10-08 11:39:49,948 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:49,948 DEBUG  : onMergeNotification
+2021-10-08 11:39:50,037 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:50,038 DEBUG  : Waiting for success.
+2021-10-08 11:39:50,038 DEBUG  : continue
+2021-10-08 11:39:50,133 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 120, 137, 43, 2, 75, 200, 77, 170, 180, 86, 131, 116, 202, 28, 139, 22, 136, 30, 66]}
+2021-10-08 11:39:50,135 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 120, 137, 43, 2, 75, 200, 77, 170, 180, 86, 131, 116, 202, 28, 139, 22, 136, 30, 66]}, []]
+2021-10-08 11:39:50,135 DEBUG  : Received part 0
+2021-10-08 11:39:50,136 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 114]}
+2021-10-08 11:39:50,136 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 114]}, []]
+2021-10-08 11:39:50,137 DEBUG  : Received part 255
+2021-10-08 11:39:50,137 DEBUG  : Received last part. Merged data: [120, 137, 43, 2, 75, 200, 77, 170, 180, 86, 131, 116, 202, 28, 139, 22, 136, 30, 66, 114]
+2021-10-08 11:39:50,138 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:50,138 DEBUG  : onMergeNotification
+2021-10-08 11:39:50,140 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:50,140 DEBUG  : Success.
+2021-10-08 11:39:50,141 DEBUG  : finished
+2021-10-08 11:39:50,141 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,141 INFO   : uploaded chunk offset=768
+2021-10-08 11:39:50,141 INFO   : Upload microapp chunk index=0 offset=960 size=192
+2021-10-08 11:39:50,142 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,142 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:50,145 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:50,145 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,146 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:50,146 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,146 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 192, 3, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 64, 58, 189, 210, 48, 50, 17, 211, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 81, 248, 4, 59, 64, 248, 4, 59, 16, 58, 237, 210, 12, 50, 5, 211, 81, 248, 4, 59, 64, 248, 4, 59, 4, 58, 249, 210, 4, 50, 8, 208, 210, 7, 28, 191, 17, 248, 1, 59, 0, 248, 1, 59, 1, 211, 11, 136]
+2021-10-08 11:39:50,717 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b"WHP\x00\x13 \xc69D\xc4\x815\xbb\xf5g\x0b\xff\xe0\x1e\xc3E\x12;\x8f\x12\x01\x946\x17z9p\r\x95B?\\9\xe0x\xf2<\x95\xf8\xae|\xda<y\xe3\xa0\xb3\x1c\x93\xf3\xf2;\xe3\xc5sT\x04\xcdQ\xf6\xe0m\xd8/\x17%`&\x9f\xea\xe9\xe4\xa9\xa3\xf6\x0etb\xca\x90{z\x1fx\x06l\xeaB\xf6\xb9\xe0h*_]\x0b\xa9#g~+\x06\xcd\xfao\xed\x9b\xaf<\x1d\x1ah+\x9b]O\xf3\xa1\xdd\xe1\xc17\x83\xbdG@\xc1RFmCf\x14,$\xc8\xd8 \xe8\xcc\xb6\xe3(NuC\x0e\x0e\x1d3\xc3\x8f\xbcl\xa7\xef;\x0e\xa0 :?\xb4\'\xab\xbfg\xdb\x1foAx\x15Q^\x14\xd7`\x15\xef\x12\x16\x03\xac\xb2\xf3\x94\x93\xf9\xe6\x98\x1d\xdc\x9ce\xff\x1e6*;\x92D\x1b\xac\xd9)x")
+2021-10-08 11:39:50,722 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 109, 139, 111, 2, 58, 6, 43, 112, 238, 232, 31, 189, 87, 32, 204, 72, 42, 64, 110]}
+2021-10-08 11:39:50,722 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 109, 139, 111, 2, 58, 6, 43, 112, 238, 232, 31, 189, 87, 32, 204, 72, 42, 64, 110]}, []]
+2021-10-08 11:39:50,722 DEBUG  : Received part 0
+2021-10-08 11:39:50,723 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 229]}
+2021-10-08 11:39:50,723 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 229]}, []]
+2021-10-08 11:39:50,723 DEBUG  : Received part 255
+2021-10-08 11:39:50,724 DEBUG  : Received last part. Merged data: [109, 139, 111, 2, 58, 6, 43, 112, 238, 232, 31, 189, 87, 32, 204, 72, 42, 64, 110, 229]
+2021-10-08 11:39:50,725 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:50,725 DEBUG  : onMergeNotification
+2021-10-08 11:39:50,768 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 33, 124, 33, 2, 0, 131, 32, 238, 60, 130, 57, 229, 109, 250, 211, 245, 185, 120, 174]}
+2021-10-08 11:39:50,768 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 33, 124, 33, 2, 0, 131, 32, 238, 60, 130, 57, 229, 109, 250, 211, 245, 185, 120, 174]}, []]
+2021-10-08 11:39:50,768 DEBUG  : Received part 0
+2021-10-08 11:39:50,769 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 72]}
+2021-10-08 11:39:50,769 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 72]}, []]
+2021-10-08 11:39:50,769 DEBUG  : Received part 255
+2021-10-08 11:39:50,770 DEBUG  : Received last part. Merged data: [33, 124, 33, 2, 0, 131, 32, 238, 60, 130, 57, 229, 109, 250, 211, 245, 185, 120, 174, 72]
+2021-10-08 11:39:50,771 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:50,771 DEBUG  : onMergeNotification
+2021-10-08 11:39:50,818 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:50,819 DEBUG  : Waiting for success.
+2021-10-08 11:39:50,819 DEBUG  : continue
+2021-10-08 11:39:50,920 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:50,920 DEBUG  : Success.
+2021-10-08 11:39:50,921 DEBUG  : finished
+2021-10-08 11:39:50,921 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,921 INFO   : uploaded chunk offset=960
+2021-10-08 11:39:50,922 INFO   : Upload microapp chunk index=0 offset=1152 size=192
+2021-10-08 11:39:50,922 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,923 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:50,927 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:50,928 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,928 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:50,928 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:50,928 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 196, 0, 0, 0, 128, 4, 3, 128, 96, 70, 112, 71, 0, 191, 8, 42, 19, 211, 139, 7, 141, 208, 16, 240, 3, 3, 138, 208, 195, 241, 4, 3, 210, 26, 219, 7, 28, 191, 17, 248, 1, 59, 0, 248, 1, 59, 128, 211, 49, 248, 2, 59, 32, 248, 2, 59, 123, 231, 4, 58, 217, 211, 1, 58, 17, 248, 1, 59, 0, 248, 1, 59, 249, 210, 11, 120, 3, 112, 75, 120, 67, 112, 139, 120, 131, 112, 96, 70, 112, 71, 240, 180, 134, 7, 70, 208, 84, 30, 0, 42, 60, 208, 202, 178, 3, 70, 2, 224, 20, 241, 255, 52, 54, 211, 3, 248, 1, 43, 157, 7, 248, 209, 3, 44, 41, 217, 205, 178, 69, 234, 5, 37, 15, 44, 69, 234, 5, 69, 51, 217, 164, 241, 16, 6, 54, 9, 3, 241, 32, 7, 7, 235, 6, 23, 3, 241, 16, 2, 66, 233, 4, 85, 66, 233, 2, 85, 16, 50, 186, 66, 248, 209, 114, 28, 20, 240, 12, 15, 3, 235, 2, 18, 4, 240, 15, 6, 19, 208, 51, 31, 35, 240, 3, 3, 4, 51, 19, 68]
+2021-10-08 11:39:51,594 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'\xf8\xd6\x96\x00l\x11\xa7\x8e\xf3\xa3\x82\xa7R\xeb\x98\x19\x13f\x17dx\xc66[Q\xa6\x82<O\xc7\x87\x1c}\xc2\xd0\x99\x1el*!S\x8d\xe2\xd0\x16m\xd3\xff\xa7\xd5\xab\x8b\xcd!uc\xf41s\xf6\x86(\xee\xfa\x97h\x8d\x92M\x07\xd4\x9e\xfeG\xb0v\x9a\x9eO\xff\x89e\xb3\x92\xec\xf4:\xb571W\xf5\x82\xdfa\xf4\x0bu\x14Rq@4\x08e\xb4\xa2`\xa0\xbfx \x93\x1d\x06\xec\xa4\xb4D\x1b\x98\xd7P\xb7\xb9\xb2;\xe5\x8e\x00\xc9?\x1c\xbc\x1e\xd9\x1f\x9e\x9c\x0f\xfa\x04\xa4\xcfM\x04\x89\x7f$\x91-2f\x11\x04H\xf6\x84\xa2\xb9\xed\xd9C3[4\xbe\x0f\x85(\x08\xed\xfaH\xf8"\xacN\x18\x08~\xd8\x0e\x92\x11,\x1f\x15\xd8lt\xe4\xba\x9a\xbd\xd1d\xc6\xf7v\xfc m\xd3\xcbh\xe0\xc31\x8b\x84s')
+2021-10-08 11:39:51,598 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 225, 57, 194, 2, 239, 234, 90, 15, 5, 93, 112, 31, 177, 187, 211, 16, 143, 79, 230]}
+2021-10-08 11:39:51,598 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 225, 57, 194, 2, 239, 234, 90, 15, 5, 93, 112, 31, 177, 187, 211, 16, 143, 79, 230]}, []]
+2021-10-08 11:39:51,598 DEBUG  : Received part 0
+2021-10-08 11:39:51,615 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 106]}
+2021-10-08 11:39:51,615 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 106]}, []]
+2021-10-08 11:39:51,615 DEBUG  : Received part 255
+2021-10-08 11:39:51,616 DEBUG  : Received last part. Merged data: [225, 57, 194, 2, 239, 234, 90, 15, 5, 93, 112, 31, 177, 187, 211, 16, 143, 79, 230, 106]
+2021-10-08 11:39:51,616 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:51,617 DEBUG  : onMergeNotification
+2021-10-08 11:39:51,693 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 245, 191, 179, 2, 124, 28, 59, 230, 21, 137, 116, 14, 86, 251, 76, 213, 81, 50, 32]}
+2021-10-08 11:39:51,693 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 245, 191, 179, 2, 124, 28, 59, 230, 21, 137, 116, 14, 86, 251, 76, 213, 81, 50, 32]}, []]
+2021-10-08 11:39:51,695 DEBUG  : Received part 0
+2021-10-08 11:39:51,696 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 108]}
+2021-10-08 11:39:51,697 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 108]}, []]
+2021-10-08 11:39:51,697 DEBUG  : Received part 255
+2021-10-08 11:39:51,697 DEBUG  : Received last part. Merged data: [245, 191, 179, 2, 124, 28, 59, 230, 21, 137, 116, 14, 86, 251, 76, 213, 81, 50, 32, 108]
+2021-10-08 11:39:51,698 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:51,698 DEBUG  : onMergeNotification
+2021-10-08 11:39:51,698 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:51,699 DEBUG  : Waiting for success.
+2021-10-08 11:39:51,699 DEBUG  : continue
+2021-10-08 11:39:51,800 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:51,800 DEBUG  : Success.
+2021-10-08 11:39:51,800 DEBUG  : finished
+2021-10-08 11:39:51,801 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:51,801 INFO   : uploaded chunk offset=1152
+2021-10-08 11:39:51,801 INFO   : Upload microapp chunk index=0 offset=1344 size=72
+2021-10-08 11:39:51,801 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:51,802 DEBUG  : setupNotificationStream serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff timeout=5
+2021-10-08 11:39:51,805 DEBUG  : setupNotificationStream: subscribe for notifications.
+2021-10-08 11:39:51,805 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:51,805 DEBUG  : setupNotificationStream: writeCommand().
+2021-10-08 11:39:51,805 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:51,806 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 91, 0, 76, 0, 0, 0, 64, 5, 66, 248, 4, 91, 147, 66, 251, 209, 6, 240, 3, 4, 44, 177, 201, 178, 28, 68, 3, 248, 1, 27, 156, 66, 251, 209, 240, 188, 112, 71, 52, 70, 19, 70, 0, 44, 243, 209, 248, 231, 20, 70, 3, 70, 194, 231, 26, 70, 38, 70, 224, 231, 72, 101, 108, 108, 111, 32, 77, 105, 99, 114, 111, 97, 112, 112, 33, 33, 0, 255, 255, 255]
+2021-10-08 11:39:52,081 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b"\x85\xf4\x9d\x00\xa70\xbf\xf4A\x0b[\xfb{\xde\xab\xc1\x8f\xef\xd2K{\x9076\xbb\xdb\xa1\x00E\x94M\xfc\x01\x87\xae\xbe\xc8E\xce+s~1\xd2\nF\xe2\xecz\xb72\xa3jLk\xad\x80lJ\xa7\xaeDf\xbf\xa9j\x16\xb9+6\xdbG\'\x02p\x8b[\x88\xde\xa0z\xbe\xd4kO\xbe\x88\x92X\xbe\x13c`\x0e+\x86\xf9B\x19 ")
+2021-10-08 11:39:52,085 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 64, 14, 74, 2, 118, 164, 177, 67, 208, 222, 149, 129, 9, 151, 176, 147, 8, 223, 151]}
+2021-10-08 11:39:52,086 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 64, 14, 74, 2, 118, 164, 177, 67, 208, 222, 149, 129, 9, 151, 176, 147, 8, 223, 151]}, []]
+2021-10-08 11:39:52,086 DEBUG  : Received part 0
+2021-10-08 11:39:52,091 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 205]}
+2021-10-08 11:39:52,092 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 205]}, []]
+2021-10-08 11:39:52,092 DEBUG  : Received part 255
+2021-10-08 11:39:52,092 DEBUG  : Received last part. Merged data: [64, 14, 74, 2, 118, 164, 177, 67, 208, 222, 149, 129, 9, 151, 176, 147, 8, 223, 151, 205]
+2021-10-08 11:39:52,094 DEBUG  : Result: [5, 91, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:52,094 DEBUG  : onMergeNotification
+2021-10-08 11:39:52,135 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 95, 136, 160, 2, 113, 127, 179, 3, 6, 32, 21, 68, 34, 239, 227, 188, 55, 227, 217]}
+2021-10-08 11:39:52,136 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 95, 136, 160, 2, 113, 127, 179, 3, 6, 32, 21, 68, 34, 239, 227, 188, 55, 227, 217]}, []]
+2021-10-08 11:39:52,136 DEBUG  : Received part 0
+2021-10-08 11:39:52,137 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 210]}
+2021-10-08 11:39:52,138 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 210]}, []]
+2021-10-08 11:39:52,139 DEBUG  : Received part 255
+2021-10-08 11:39:52,139 DEBUG  : Received last part. Merged data: [95, 136, 160, 2, 113, 127, 179, 3, 6, 32, 21, 68, 34, 239, 227, 188, 55, 227, 217, 210]
+2021-10-08 11:39:52,140 DEBUG  : Result: [5, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:52,141 DEBUG  : onMergeNotification
+2021-10-08 11:39:52,182 DEBUG  : loopActive=True loopCount=0
+2021-10-08 11:39:52,183 DEBUG  : Waiting for success.
+2021-10-08 11:39:52,184 DEBUG  : continue
+2021-10-08 11:39:52,285 DEBUG  : loopActive=True loopCount=1
+2021-10-08 11:39:52,286 DEBUG  : Success.
+2021-10-08 11:39:52,287 DEBUG  : finished
+2021-10-08 11:39:52,287 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,288 INFO   : uploaded chunk offset=1344
+2021-10-08 11:39:52.288862 Upload done
+Validate..
+2021-10-08 11:39:52,289 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,290 DEBUG  : setupSingleNotification serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,293 DEBUG  : setupSingleNotification: subscribe for notifications.
+2021-10-08 11:39:52,294 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,295 DEBUG  : setupSingleNotification: writeCommand().
+2021-10-08 11:39:52,295 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,295 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 92, 0, 2, 0, 0, 0]
+2021-10-08 11:39:52,375 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'o\xe62\x00\xc6\xa7\x8d\xc3\x95\xa7E#`[\\\xafx?\xd4~')
+2021-10-08 11:39:52,379 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 6, 253, 151, 2, 124, 6, 51, 182, 87, 250, 141, 229, 22, 226, 223, 236, 1, 59, 178]}
+2021-10-08 11:39:52,380 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 6, 253, 151, 2, 124, 6, 51, 182, 87, 250, 141, 229, 22, 226, 223, 236, 1, 59, 178]}, []]
+2021-10-08 11:39:52,381 DEBUG  : Received part 0
+2021-10-08 11:39:52,383 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 170]}
+2021-10-08 11:39:52,383 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 170]}, []]
+2021-10-08 11:39:52,384 DEBUG  : Received part 255
+2021-10-08 11:39:52,384 DEBUG  : Received last part. Merged data: [6, 253, 151, 2, 124, 6, 51, 182, 87, 250, 141, 229, 22, 226, 223, 236, 1, 59, 178, 170]
+2021-10-08 11:39:52,386 DEBUG  : Result: [5, 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:52,386 DEBUG  : _killNotificationLoop
+2021-10-08 11:39:52,477 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+Validate done
+Enable..
+2021-10-08 11:39:52,478 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,479 DEBUG  : setupSingleNotification serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,483 DEBUG  : setupSingleNotification: subscribe for notifications.
+2021-10-08 11:39:52,483 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,484 DEBUG  : setupSingleNotification: writeCommand().
+2021-10-08 11:39:52,484 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-08 11:39:52,484 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 94, 0, 2, 0, 0, 0]
+2021-10-08 11:39:52,618 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'\x1b^\xbf\x00\x8b\xbe\x98Q\xb8Gm:\x89\x18\xaa\xb9_/\xa0L')
+2021-10-08 11:39:52,621 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 56, 195, 214, 2, 152, 181, 230, 238, 62, 67, 110, 20, 221, 62, 192, 196, 50, 124, 33]}
+2021-10-08 11:39:52,622 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 56, 195, 214, 2, 152, 181, 230, 238, 62, 67, 110, 20, 221, 62, 192, 196, 50, 124, 33]}, []]
+2021-10-08 11:39:52,623 DEBUG  : Received part 0
+2021-10-08 11:39:52,623 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 159]}
+2021-10-08 11:39:52,624 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 159]}, []]
+2021-10-08 11:39:52,624 DEBUG  : Received part 255
+2021-10-08 11:39:52,625 DEBUG  : Received last part. Merged data: [56, 195, 214, 2, 152, 181, 230, 238, 62, 67, 110, 20, 221, 62, 192, 196, 50, 124, 33, 159]
+2021-10-08 11:39:52,626 DEBUG  : Result: [5, 94, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-08 11:39:52,626 DEBUG  : _killNotificationLoop
+2021-10-08 11:39:52,727 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+Enable done
+2021-10-08 11:39:52,728 DEBUG  : Disconnecting from BLE device...
+2021-10-08 11:39:52,728 DEBUG  : Removing rule PropChanged, ID: 1
+2021-10-08 11:39:54,673 DEBUG  : stopScanning scanningActive=False
