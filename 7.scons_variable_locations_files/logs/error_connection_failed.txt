@@ -1,0 +1,138 @@
+/usr/local/lib/python3.8/dist-packages/crownstone_ble/__init__.py
+Initializing tool with bleAdapterAddress=44:03:2C:B5:28:2B
+2021-10-07 14:44:08,918 DEBUG  : Using selector: EpollSelector
+Main
+First 32 bytes of the binary:
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 181, 138, 176, 0, 175, 0, 240, 99, 248, 0, 35]
+2021-10-07 14:44:08,922 INFO   : Connecting to FD:FC:93:F8:97:BA
+2021-10-07 14:44:08,922 DEBUG  : Connecting..
+2021-10-07 14:44:09,217 DEBUG  : HM02, EF:7B:6F:5C:D8:D8 (-63 dBm), Object Path: /org/bluez/hci0/dev_EF_7B_6F_5C_D8_D8
+2021-10-07 14:44:09,219 DEBUG  : CF-41-34-D3-B2-3F, CF:41:34:D3:B2:3F (-84 dBm), Object Path: /org/bluez/hci0/dev_CF_41_34_D3_B2_3F
+2021-10-07 14:44:09,224 DEBUG  : CRWN, E3:4A:7E:46:58:01 (-52 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_01
+2021-10-07 14:44:09,226 DEBUG  : CRWN, F8:73:8C:8F:E4:E8 (-76 dBm), Object Path: /org/bluez/hci0/dev_F8_73_8C_8F_E4_E8
+2021-10-07 14:44:09,227 DEBUG  : CF-41-34-D3-B2-3D, CF:41:34:D3:B2:3D (-85 dBm), Object Path: /org/bluez/hci0/dev_CF_41_34_D3_B2_3D
+2021-10-07 14:44:09,232 DEBUG  : F0-DC-CB-D4-63-2D, F0:DC:CB:D4:63:2D (-72 dBm), Object Path: /org/bluez/hci0/dev_F0_DC_CB_D4_63_2D
+2021-10-07 14:44:09,234 DEBUG  : CRWN, D4:BA:AF:78:73:96 (-76 dBm), Object Path: /org/bluez/hci0/dev_D4_BA_AF_78_73_96
+2021-10-07 14:44:09,235 DEBUG  : F7-D3-44-FD-B1-3F, F7:D3:44:FD:B1:3F (-95 dBm), Object Path: /org/bluez/hci0/dev_F7_D3_44_FD_B1_3F
+2021-10-07 14:44:09,235 DEBUG  : AC-23-3F-71-CD-36, AC:23:3F:71:CD:36 (-66 dBm), Object Path: /org/bluez/hci0/dev_AC_23_3F_71_CD_36
+2021-10-07 14:44:09,247 DEBUG  : FD-D9-0E-9A-99-9B, FD:D9:0E:9A:99:9B (-50 dBm), Object Path: /org/bluez/hci0/dev_FD_D9_0E_9A_99_9B
+2021-10-07 14:44:09,251 DEBUG  : LE_WH-1000XM4, CF:73:E2:B8:2D:0A (-64 dBm), Object Path: /org/bluez/hci0/dev_CF_73_E2_B8_2D_0A
+2021-10-07 14:44:09,252 DEBUG  : E6-FE-7A-A8-66-FD, E6:FE:7A:A8:66:FD (-62 dBm), Object Path: /org/bluez/hci0/dev_E6_FE_7A_A8_66_FD
+2021-10-07 14:44:09,253 DEBUG  : CF-D1-A8-65-D3-69, CF:D1:A8:65:D3:69 (-85 dBm), Object Path: /org/bluez/hci0/dev_CF_D1_A8_65_D3_69
+2021-10-07 14:44:09,254 DEBUG  : kienSAT_95BB7A, 8C:AA:B5:95:BB:7A (-88 dBm), Object Path: /org/bluez/hci0/dev_8C_AA_B5_95_BB_7A
+2021-10-07 14:44:09,254 DEBUG  : E8-3E-AB-E9-E0-1E, E8:3E:AB:E9:E0:1E (-86 dBm), Object Path: /org/bluez/hci0/dev_E8_3E_AB_E9_E0_1E
+2021-10-07 14:44:09,255 DEBUG  : D0-DB-21-1D-39-CB, D0:DB:21:1D:39:CB (-87 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CB
+2021-10-07 14:44:09,256 DEBUG  : D0-D2-58-31-65-95, D0:D2:58:31:65:95 (-69 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_95
+2021-10-07 14:44:09,258 DEBUG  : F4-FE-FB-39-45-DF, F4:FE:FB:39:45:DF (-91 dBm), Object Path: /org/bluez/hci0/dev_F4_FE_FB_39_45_DF
+2021-10-07 14:44:09,258 DEBUG  : EE-E1-11-59-01-36, EE:E1:11:59:01:36 (-58 dBm), Object Path: /org/bluez/hci0/dev_EE_E1_11_59_01_36
+2021-10-07 14:44:09,273 DEBUG  : HM04, E6:FE:7A:A8:66:FC (-62 dBm), Object Path: /org/bluez/hci0/dev_E6_FE_7A_A8_66_FC
+2021-10-07 14:44:09,279 DEBUG  : CRWN, E4:5C:B2:EC:1D:20 (-91 dBm), Object Path: /org/bluez/hci0/dev_E4_5C_B2_EC_1D_20
+2021-10-07 14:44:09,279 DEBUG  : E4-B2-2C-85-A9-33, E4:B2:2C:85:A9:33 (-87 dBm), Object Path: /org/bluez/hci0/dev_E4_B2_2C_85_A9_33
+2021-10-07 14:44:09,292 DEBUG  : EE-E1-11-59-01-34, EE:E1:11:59:01:34 (-53 dBm), Object Path: /org/bluez/hci0/dev_EE_E1_11_59_01_34
+2021-10-07 14:44:09,301 DEBUG  : 72-75-98-9B-30-A7, 72:75:98:9B:30:A7 (-74 dBm), Object Path: /org/bluez/hci0/dev_72_75_98_9B_30_A7
+2021-10-07 14:44:09,316 DEBUG  : CRWN, F0:DC:CB:D4:63:2C (-89 dBm), Object Path: /org/bluez/hci0/dev_F0_DC_CB_D4_63_2C
+2021-10-07 14:44:09,318 DEBUG  : EF-7B-6F-5C-D8-D7, EF:7B:6F:5C:D8:D7 (-63 dBm), Object Path: /org/bluez/hci0/dev_EF_7B_6F_5C_D8_D7
+2021-10-07 14:44:09,320 DEBUG  : CRWN, CF:D1:A8:65:D3:6A (-90 dBm), Object Path: /org/bluez/hci0/dev_CF_D1_A8_65_D3_6A
+2021-10-07 14:44:09,347 DEBUG  : CRWN, D7:1D:0E:E1:D5:2A (-83 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_2A
+2021-10-07 14:44:09,348 DEBUG  : E6-FE-7A-A8-66-FB, E6:FE:7A:A8:66:FB (-63 dBm), Object Path: /org/bluez/hci0/dev_E6_FE_7A_A8_66_FB
+2021-10-07 14:44:09,349 DEBUG  : 42-8F-4A-6C-4C-17, 42:8F:4A:6C:4C:17 (-64 dBm), Object Path: /org/bluez/hci0/dev_42_8F_4A_6C_4C_17
+2021-10-07 14:44:09,350 DEBUG  : 73-38-23-8A-E3-31, 73:38:23:8A:E3:31 (-83 dBm), Object Path: /org/bluez/hci0/dev_73_38_23_8A_E3_31
+2021-10-07 14:44:09,352 DEBUG  : D0-D2-58-31-65-93, D0:D2:58:31:65:93 (-67 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_93
+2021-10-07 14:44:09,354 DEBUG  : E7-73-7A-F4-F0-43, E7:73:7A:F4:F0:43 (-72 dBm), Object Path: /org/bluez/hci0/dev_E7_73_7A_F4_F0_43
+2021-10-07 14:44:09,355 DEBUG  : CRWN, CB:69:B8:69:14:6E (-73 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6E
+2021-10-07 14:44:09,356 DEBUG  : CRWN, D0:D2:58:31:65:94 (-48 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_94
+2021-10-07 14:44:09,364 DEBUG  : D0-30-F7-32-B3-08, D0:30:F7:32:B3:08 (-76 dBm), Object Path: /org/bluez/hci0/dev_D0_30_F7_32_B3_08
+2021-10-07 14:44:09,383 DEBUG  : DE-CD-B2-61-BD-46, DE:CD:B2:61:BD:46 (-63 dBm), Object Path: /org/bluez/hci0/dev_DE_CD_B2_61_BD_46
+2021-10-07 14:44:09,386 DEBUG  : E3-22-9A-68-5D-E9, E3:22:9A:68:5D:E9 (-87 dBm), Object Path: /org/bluez/hci0/dev_E3_22_9A_68_5D_E9
+2021-10-07 14:44:09,398 DEBUG  : CRWN, E9:5F:DB:B9:AF:F1 (-94 dBm), Object Path: /org/bluez/hci0/dev_E9_5F_DB_B9_AF_F1
+2021-10-07 14:44:09,401 DEBUG  : D4-BA-AF-78-73-95, D4:BA:AF:78:73:95 (-95 dBm), Object Path: /org/bluez/hci0/dev_D4_BA_AF_78_73_95
+2021-10-07 14:44:09,403 DEBUG  : DE-CD-B2-61-BD-46, DE:CD:B2:61:BD:46 (-62 dBm), Object Path: /org/bluez/hci0/dev_DE_CD_B2_61_BD_46
+2021-10-07 14:44:09,405 DEBUG  : EF-7B-6F-5C-D8-D9, EF:7B:6F:5C:D8:D9 (-65 dBm), Object Path: /org/bluez/hci0/dev_EF_7B_6F_5C_D8_D9
+2021-10-07 14:44:09,408 DEBUG  : F0-DC-CB-D4-63-2D, F0:DC:CB:D4:63:2D (-85 dBm), Object Path: /org/bluez/hci0/dev_F0_DC_CB_D4_63_2D
+2021-10-07 14:44:09,410 DEBUG  : DF-7D-88-83-F9-E9, DF:7D:88:83:F9:E9 (-89 dBm), Object Path: /org/bluez/hci0/dev_DF_7D_88_83_F9_E9
+2021-10-07 14:44:09,412 DEBUG  : DC-AE-89-6E-1C-6E, DC:AE:89:6E:1C:6E (-92 dBm), Object Path: /org/bluez/hci0/dev_DC_AE_89_6E_1C_6E
+2021-10-07 14:44:09,418 DEBUG  : LE_WH-1000XM4, C6:FE:C2:5E:A4:6A (-81 dBm), Object Path: /org/bluez/hci0/dev_C6_FE_C2_5E_A4_6A
+2021-10-07 14:44:09,418 DEBUG  : E9-5F-DB-B9-AF-F0, E9:5F:DB:B9:AF:F0 (-91 dBm), Object Path: /org/bluez/hci0/dev_E9_5F_DB_B9_AF_F0
+2021-10-07 14:44:09,422 DEBUG  : CRWN, E0:7F:01:13:FE:B8 (-87 dBm), Object Path: /org/bluez/hci0/dev_E0_7F_01_13_FE_B8
+2021-10-07 14:44:09,422 DEBUG  : CB-69-B8-69-14-6F, CB:69:B8:69:14:6F (-74 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6F
+2021-10-07 14:44:09,428 DEBUG  : CRWN, E7:A4:CD:36:B1:26 (-93 dBm), Object Path: /org/bluez/hci0/dev_E7_A4_CD_36_B1_26
+2021-10-07 14:44:09,431 DEBUG  : CRWN, C2:58:C4:67:34:45 (-79 dBm), Object Path: /org/bluez/hci0/dev_C2_58_C4_67_34_45
+2021-10-07 14:44:09,433 DEBUG  : 5D-C4-1E-EF-B7-EC, 5D:C4:1E:EF:B7:EC (-60 dBm), Object Path: /org/bluez/hci0/dev_5D_C4_1E_EF_B7_EC
+2021-10-07 14:44:09,434 DEBUG  : D7-1D-0E-E1-D5-29, D7:1D:0E:E1:D5:29 (-84 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_29
+2021-10-07 14:44:09,435 DEBUG  : 5E-F9-70-0B-B0-DA, 5E:F9:70:0B:B0:DA (-58 dBm), Object Path: /org/bluez/hci0/dev_5E_F9_70_0B_B0_DA
+2021-10-07 14:44:09,437 DEBUG  : D9-DF-98-98-7B-33, D9:DF:98:98:7B:33 (-89 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_33
+2021-10-07 14:44:09,441 DEBUG  : CRWN, FD:D9:0E:9A:99:9A (-52 dBm), Object Path: /org/bluez/hci0/dev_FD_D9_0E_9A_99_9A
+2021-10-07 14:44:09,443 DEBUG  : D9-DF-98-98-7B-31, D9:DF:98:98:7B:31 (-88 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_31
+2021-10-07 14:44:09,455 DEBUG  : CRWN, CD:01:F1:C0:68:12 (-67 dBm), Object Path: /org/bluez/hci0/dev_CD_01_F1_C0_68_12
+2021-10-07 14:44:09,459 DEBUG  : 4C-34-7C-C8-89-C7, 4C:34:7C:C8:89:C7 (-58 dBm), Object Path: /org/bluez/hci0/dev_4C_34_7C_C8_89_C7
+2021-10-07 14:44:09,463 DEBUG  : CRWN, D0:D2:58:31:65:94 (-46 dBm), Object Path: /org/bluez/hci0/dev_D0_D2_58_31_65_94
+2021-10-07 14:44:09,465 DEBUG  : EE-E1-11-59-01-36, EE:E1:11:59:01:36 (-50 dBm), Object Path: /org/bluez/hci0/dev_EE_E1_11_59_01_36
+2021-10-07 14:44:09,467 DEBUG  : D0-DB-21-1D-39-CB, D0:DB:21:1D:39:CB (-82 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CB
+2021-10-07 14:44:09,480 DEBUG  : CRWN, C5:ED:09:54:09:9F (-83 dBm), Object Path: /org/bluez/hci0/dev_C5_ED_09_54_09_9F
+2021-10-07 14:44:09,482 DEBUG  : CRWN, EB:6F:F2:D0:9B:30 (-68 dBm), Object Path: /org/bluez/hci0/dev_EB_6F_F2_D0_9B_30
+2021-10-07 14:44:09,485 DEBUG  : D7-1D-0E-E1-D5-2B, D7:1D:0E:E1:D5:2B (-86 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_2B
+2021-10-07 14:44:09,511 DEBUG  : HM01, EE:E1:11:59:01:35 (-58 dBm), Object Path: /org/bluez/hci0/dev_EE_E1_11_59_01_35
+2021-10-07 14:44:09,512 DEBUG  : CRWN, D0:DB:21:1D:39:CA (-66 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_CA
+2021-10-07 14:44:09,512 DEBUG  : EC-3D-22-17-B1-A8, EC:3D:22:17:B1:A8 (-90 dBm), Object Path: /org/bluez/hci0/dev_EC_3D_22_17_B1_A8
+2021-10-07 14:44:09,512 DEBUG  : CF-D1-A8-65-D3-69, CF:D1:A8:65:D3:69 (-86 dBm), Object Path: /org/bluez/hci0/dev_CF_D1_A8_65_D3_69
+2021-10-07 14:44:09,513 DEBUG  : CRWN, D5:3F:15:91:BB:A0 (-68 dBm), Object Path: /org/bluez/hci0/dev_D5_3F_15_91_BB_A0
+2021-10-07 14:44:09,516 DEBUG  : 61-12-30-C3-33-84, 61:12:30:C3:33:84 (-91 dBm), Object Path: /org/bluez/hci0/dev_61_12_30_C3_33_84
+2021-10-07 14:44:09,517 DEBUG  : 3E-D5-17-3C-94-38, 3E:D5:17:3C:94:38 (-64 dBm), Object Path: /org/bluez/hci0/dev_3E_D5_17_3C_94_38
+2021-10-07 14:44:09,522 DEBUG  : D0-DB-21-1D-39-C9, D0:DB:21:1D:39:C9 (-84 dBm), Object Path: /org/bluez/hci0/dev_D0_DB_21_1D_39_C9
+2021-10-07 14:44:09,525 DEBUG  : 7E-9E-5E-DD-86-D5, 7E:9E:5E:DD:86:D5 (-73 dBm), Object Path: /org/bluez/hci0/dev_7E_9E_5E_DD_86_D5
+2021-10-07 14:44:09,539 DEBUG  : 73-38-23-8A-E3-31, 73:38:23:8A:E3:31 (-78 dBm), Object Path: /org/bluez/hci0/dev_73_38_23_8A_E3_31
+2021-10-07 14:44:09,544 DEBUG  : CRWN, CB:69:B8:69:14:6E (-77 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6E
+2021-10-07 14:44:09,558 DEBUG  : 84-0D-8E-2D-80-8E, 84:0D:8E:2D:80:8E (-93 dBm), Object Path: /org/bluez/hci0/dev_84_0D_8E_2D_80_8E
+2021-10-07 14:44:09,571 DEBUG  : CRWN, C8:B6:40:89:1A:E5 (-85 dBm), Object Path: /org/bluez/hci0/dev_C8_B6_40_89_1A_E5
+2021-10-07 14:44:09,572 DEBUG  : 72-75-98-9B-30-A7, 72:75:98:9B:30:A7 (-64 dBm), Object Path: /org/bluez/hci0/dev_72_75_98_9B_30_A7
+2021-10-07 14:44:09,594 DEBUG  : HM04, E6:FE:7A:A8:66:FC (-63 dBm), Object Path: /org/bluez/hci0/dev_E6_FE_7A_A8_66_FC
+2021-10-07 14:44:09,596 DEBUG  : F8-73-8C-8F-E4-E7, F8:73:8C:8F:E4:E7 (-85 dBm), Object Path: /org/bluez/hci0/dev_F8_73_8C_8F_E4_E7
+2021-10-07 14:44:09,605 DEBUG  : 5A-60-35-66-60-E0, 5A:60:35:66:60:E0 (-74 dBm), Object Path: /org/bluez/hci0/dev_5A_60_35_66_60_E0
+2021-10-07 14:44:09,607 DEBUG  : bart, DE:CD:B2:61:BD:47 (-68 dBm), Object Path: /org/bluez/hci0/dev_DE_CD_B2_61_BD_47
+2021-10-07 14:44:09,609 DEBUG  : FA-63-6D-7B-B4-36, FA:63:6D:7B:B4:36 (-66 dBm), Object Path: /org/bluez/hci0/dev_FA_63_6D_7B_B4_36
+2021-10-07 14:44:09,613 DEBUG  : E4-1F-2C-F0-54-FA, E4:1F:2C:F0:54:FA (-79 dBm), Object Path: /org/bluez/hci0/dev_E4_1F_2C_F0_54_FA
+2021-10-07 14:44:09,614 DEBUG  : CRWN, E3:4A:7E:46:58:01 (-53 dBm), Object Path: /org/bluez/hci0/dev_E3_4A_7E_46_58_01
+2021-10-07 14:44:09,617 DEBUG  : FD-FC-93-F8-97-BB, FD:FC:93:F8:97:BB (-57 dBm), Object Path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BB
+2021-10-07 14:44:09,622 DEBUG  : E3-22-9A-68-5D-E9, E3:22:9A:68:5D:E9 (-88 dBm), Object Path: /org/bluez/hci0/dev_E3_22_9A_68_5D_E9
+2021-10-07 14:44:09,639 DEBUG  : CRWN, D7:1D:0E:E1:D5:2A (-79 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_2A
+2021-10-07 14:44:09,639 DEBUG  : CRWN, E4:B2:2C:85:A9:34 (-67 dBm), Object Path: /org/bluez/hci0/dev_E4_B2_2C_85_A9_34
+2021-10-07 14:44:09,640 DEBUG  : CRWN, CF:41:34:D3:B2:3E (-63 dBm), Object Path: /org/bluez/hci0/dev_CF_41_34_D3_B2_3E
+2021-10-07 14:44:09,644 DEBUG  : CRWN, C2:58:C4:67:34:45 (-77 dBm), Object Path: /org/bluez/hci0/dev_C2_58_C4_67_34_45
+2021-10-07 14:44:09,644 DEBUG  : E6-FE-7A-A8-66-FB, E6:FE:7A:A8:66:FB (-63 dBm), Object Path: /org/bluez/hci0/dev_E6_FE_7A_A8_66_FB
+2021-10-07 14:44:09,649 DEBUG  : CRWN, CB:69:B8:69:14:6E (-74 dBm), Object Path: /org/bluez/hci0/dev_CB_69_B8_69_14_6E
+2021-10-07 14:44:09,649 DEBUG  : D7-1D-0E-E1-D5-29, D7:1D:0E:E1:D5:29 (-84 dBm), Object Path: /org/bluez/hci0/dev_D7_1D_0E_E1_D5_29
+2021-10-07 14:44:09,651 DEBUG  : E7-73-7A-F4-F0-43, E7:73:7A:F4:F0:43 (-82 dBm), Object Path: /org/bluez/hci0/dev_E7_73_7A_F4_F0_43
+2021-10-07 14:44:09,653 DEBUG  : EF-7B-6F-5C-D8-D7, EF:7B:6F:5C:D8:D7 (-71 dBm), Object Path: /org/bluez/hci0/dev_EF_7B_6F_5C_D8_D7
+2021-10-07 14:44:09,669 DEBUG  : LE_WH-1000XM4, CF:73:E2:B8:2D:0A (-72 dBm), Object Path: /org/bluez/hci0/dev_CF_73_E2_B8_2D_0A
+2021-10-07 14:44:09,670 DEBUG  : E6-FE-7A-A8-66-FD, E6:FE:7A:A8:66:FD (-64 dBm), Object Path: /org/bluez/hci0/dev_E6_FE_7A_A8_66_FD
+2021-10-07 14:44:09,671 DEBUG  : D9-DF-98-98-7B-31, D9:DF:98:98:7B:31 (-88 dBm), Object Path: /org/bluez/hci0/dev_D9_DF_98_98_7B_31
+2021-10-07 14:44:09,678 DEBUG  : E4-B2-2C-85-A9-35, E4:B2:2C:85:A9:35 (-95 dBm), Object Path: /org/bluez/hci0/dev_E4_B2_2C_85_A9_35
+2021-10-07 14:44:09,690 DEBUG  : test, FD:FC:93:F8:97:BA (-57 dBm), Object Path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA
+2021-10-07 14:44:09,691 DEBUG  : CRWN, E4:5C:B2:EC:1D:20 (-79 dBm), Object Path: /org/bluez/hci0/dev_E4_5C_B2_EC_1D_20
+2021-10-07 14:44:09,702 DEBUG  : CF-41-34-D3-B2-3D, CF:41:34:D3:B2:3D (-85 dBm), Object Path: /org/bluez/hci0/dev_CF_41_34_D3_B2_3D
+2021-10-07 14:44:09,702 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_CF_41_34_D3_B2_3D', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-07 14:44:09,703 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-07 14:44:09,703 DEBUG  : F7-D3-44-FD-B1-3F, F7:D3:44:FD:B1:3F (-95 dBm), Object Path: /org/bluez/hci0/dev_F7_D3_44_FD_B1_3F
+2021-10-07 14:44:09,703 DEBUG  : InterfacesRemoved, org.freedesktop.DBus.ObjectManager (/): ['/org/bluez/hci0/dev_F7_D3_44_FD_B1_3F', ['org.freedesktop.DBus.Properties', 'org.freedesktop.DBus.Introspectable', 'org.bluez.Device1']]
+2021-10-07 14:44:09,704 DEBUG  : None, None (None dBm), Object Path: None
+2021-10-07 14:44:09,719 DEBUG  : Connecting to BLE device @ FD:FC:93:F8:97:BA with 44:03:2C:B5:28:2B
+2021-10-07 14:44:10,581 INFO   : Failed to connect: org.bluez.Error.Failed: Software caused connection abort
+2021-10-07 14:44:10,581 DEBUG  : Connecting..
+2021-10-07 14:44:10,593 DEBUG  : Connecting to BLE device @ FD:FC:93:F8:97:BA with 44:03:2C:B5:28:2B
+2021-10-07 14:44:10,599 DEBUG  : Connection successful.
+2021-10-07 14:44:17,867 INFO   : Failed to connect: Services discovery error
+2021-10-07 14:44:17,868 DEBUG  : Connecting..
+2021-10-07 14:44:17,876 DEBUG  : Connecting to BLE device @ FD:FC:93:F8:97:BA with 44:03:2C:B5:28:2B
+2021-10-07 14:44:19,258 INFO   : Failed to connect: org.bluez.Error.Failed: Software caused connection abort
+Traceback (most recent call last):
+  File "upload_microapp.py", line 104, in <module>
+    loop.run_until_complete(main())
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "upload_microapp.py", line 61, in main
+    await core.connect(args.bleAddress)
+  File "/usr/local/lib/python3.8/dist-packages/crownstone_ble/core/CrownstoneBle.py", line 88, in connect
+    await self.ble.connect(address)
+  File "/usr/local/lib/python3.8/dist-packages/crownstone_ble/core/ble_modules/BleHandler.py", line 157, in connect
+    raise CrownstoneBleException(CrownstoneError.CONNECTION_FAILED)
+crownstone_core.Exceptions.CrownstoneBleException: CrownstoneError.CONNECTION_FAILED

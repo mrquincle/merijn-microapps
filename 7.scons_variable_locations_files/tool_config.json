@@ -1,0 +1,15 @@
+{
+  "absolutePathToKeyFile": null,
+  "keys": {
+    "admin":              "5c767b5556de39acb886f7c129354647",
+    "member":             "d0ac8af7beb59fd955debb3888972665",
+    "basic":              "1356bbe1b35c834e2c9601d5e1b78ead",
+    "serviceDataKey":     "872625ecbb9b0994ed6b57206183d29e",
+    "localizationKey":    "708b06b55d7e01bf8cfe57bd464decd8",
+    "meshApplicationKey": "8f71b436e5df6c1ba615babd5b0834d9",
+    "meshNetworkKey":     "903891300a1a15d8b8681e3341712fee"
+  },
+  "_bleAdapterAddress": "00:1A:7D:DA:71:13",
+  "bleAdapterAddress": "44:03:2C:B5:28:2B"
+}
+
