@@ -1,0 +1,12 @@
+{
+  "name": "framework-arduinomicroapps",
+  "version": "0.0.0",
+  "description": "Arduino Framework for microapps",
+  "keywords": [
+    "framework"
+  ],
+  "homepage": "",
+  "system": [
+    "linux_x86_64"
+  ]
+}
