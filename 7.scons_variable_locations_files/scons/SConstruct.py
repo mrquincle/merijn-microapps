@@ -20,8 +20,14 @@ env.Append(
     CORE = join(env['CWD'], 'core'),
     INCLUDE = join(env['CWD'], 'include'),
     SRC = join(env['CWD'], 'src'),
-    BUILD = join(env['CWD'], 'build'),
     SCRIPTS = join(env['CWD'], 'scripts'),
+    BUILD = join(env['CWD'], 'build'),
+
+    #CORE = "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/core",
+    #INCLUDE = "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/include",
+    #SRC = "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/src",
+    #SCRIPTS = "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/scripts",
+    #BUILD = "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/.pio/build/microapp"
 )
 
 print(env['CORE'])
@@ -54,8 +60,8 @@ for index, file_ in enumerate(core_files):
 env.Append(CORE_FILES = core_files)
 
 env.Replace(
-    CC="arm-none-eabi-g++",
-    OBJCOPY="arm-none-eabi-objcopy"
+    CC="/home/m/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++",
+    OBJCOPY="/home/m/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-objcopy"
 )
 
 print(env['CORE'])
@@ -76,6 +82,7 @@ env.Append(
         ),
         build_microapp_symbols=Builder(
             action="$CC -CC -E -P -x c -I$INCLUDE $SOURCE -o $TARGET",
+            #action="$CC --version"
         ),
         build_hex=Builder(
             action="$OBJCOPY -O ihex $SOURCE $TARGET",
@@ -83,8 +90,12 @@ env.Append(
         build_bin=Builder(
             action="$OBJCOPY -O binary $SOURCE $TARGET",
         ),
+        build_version=Builder(
+            action="$CC --version"
+        )
     )
 )
+
 
 if env.GetOption('clean'):
     create_empty_header_symbols_file()

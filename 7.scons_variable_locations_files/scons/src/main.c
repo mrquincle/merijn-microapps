@@ -5,7 +5,7 @@ void setup(){
 }
 
 int loop(){
-	Serial.println("Hello Microapp!!");
+	Serial.println("Hello Microapp!");
 
 	delay(1000);
 	return 0;

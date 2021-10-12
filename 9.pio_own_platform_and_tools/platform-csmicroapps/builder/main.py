@@ -14,7 +14,6 @@ def create_empty_header_symbols_file():
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 
-
 env.Append(
     CWD = os.getcwd()
 )
@@ -45,7 +44,9 @@ env.Append(
 	  -nostdlib -ffreestanding -fno-threadsafe-statics
 	  -Wl,--gc-sections
 	  -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc
-	  -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float""".split()
+	  -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float""".split(),
+    #UPLOAD_SCRIPT = join(env['SCRIPTS'], 'upload_microapp.py'),
+    UPLOAD_SCRIPT = join(platform.get_package_dir("tool-cs-ble-uploader"), 'cs-ble-uploader'),
 )
 
 core_files="Arduino.c main.c microapp.c Serial.cpp Wire.cpp ipc/cs_IpcRamData.c".split()
@@ -90,10 +91,6 @@ env.Append(
 # Building microapp
 # 
 
-if env.GetOption('clean'):
-    create_empty_header_symbols_file()
-    env.NoClean("$HEADER_LD")
-
 microapp_symbols = env.build_microapp_symbols(source="$SYMBOLS_IN", target="$SYMBOLS_LD")
 
 firmware_elf_tmp = env.build_elf_tmp(source="$MAIN_C", target="$MAIN_ELF_TMP")
@@ -116,15 +113,14 @@ firmware_bin = env.build_bin(target="$MAIN_BIN", source="$MAIN_ELF")
 # Targets and defaults
 #
 
-upload_actions = "python3 /home/m/workspace/concepts/7.scons_variable_locations_files/upload_microapp.py -a FD:FC:93:F8:97:BA -f $MAIN_BIN"
+up_flag = ''
+for flag in env['UPLOAD_FLAGS']:
+    up_flag += f" {flag}"
+ 
+upload_actions = f"python3 $UPLOAD_SCRIPT  -f $MAIN_BIN {up_flag}"
 env.AddPlatformTarget("upload", firmware_bin, upload_actions)
 
 t= firmware_bin
 upload = env.Alias(["upload"], t)
 AlwaysBuild(upload)
 Default(t)
-
-#print(f"PWD: {os.getcwd()}")
-#print(env["BUILD_DIR"])
-#print( vars(env))
-

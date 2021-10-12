@@ -29,6 +29,7 @@ if inputFilename != None:
 
     # Fill fields from binary, as some fields are already set.
     header.fromBuffer(buf)
+    header.checksumHeader = 0
     print(f"Read header: {header}")
 
     # Set header fields that are not set yet.
