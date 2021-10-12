@@ -1,3 +1,0 @@
-       
-__SDK_VERSION_MAJOR = 0;
-__SDK_VERSION_MINOR = 1;
