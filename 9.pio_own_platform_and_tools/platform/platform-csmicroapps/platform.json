@@ -1,5 +1,5 @@
 {
-  "name": "cs-microapps",
+  "name": "csmicroapps",
   "title": "CS Mircoapps",
   "description": "Upload microapps",
   "homepage": "",
@@ -46,5 +46,8 @@
       "optional": false,
       "version": "https://gitlab.com/mPlagge/framework-arduinomicroapps"
     }
+  },
+  "pythonPackages":{
+    "crownstone-ble" : "2.1.0"
   }
 }

@@ -10,7 +10,7 @@
     "arduino"
   ],
   "platforms": [
-    "cs-microapps"
+    "csmicroapps"
   ],
   "name": "Crownstone",
   "upload": {
