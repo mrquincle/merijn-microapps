@@ -32,7 +32,7 @@ env.Append(
     HEADER_LD_EMPTY =  join(env['INCLUDE'], "microapp_header_symbols_empty.ld"),
     SYMBOLS_LD = join(env['INCLUDE'], "microapp_symbols.ld"),
     SYMBOLS_IN = join(env['INCLUDE'], "microapp_symbols.ld.in"),
-    MAIN_C = join(env['SRC'], "main.c"),
+    MAIN_C = join(env['SRC'], "main.cpp"),
     MAIN_ELF =  join(env['BUILD'], "main.elf"),
     MAIN_ELF_TMP = join(env['BUILD'], "main.elf.tmp"),
     MAIN_BIN_TMP = join(env['BUILD'], "main.bin.tmp"),
