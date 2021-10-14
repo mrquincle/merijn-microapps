@@ -1,0 +1,26 @@
+{
+  "build": {
+    "core": "crownstone",
+    "cpu": "cortex-m4",
+    "f_cpu": "64000000L",
+    "mcu": "nrf52832",
+    "variant": "Crownstone"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "platforms": [
+    "csmicroapps"
+  ],
+  "name": "Crownstone",
+  "upload": {
+    "maximum_ram_size": 2048,
+    "maximum_size": 16384,
+    "protocol": "microapp",
+    "protocols": [
+      "microapp"
+    ]
+  },
+  "url": "...",
+  "vendor": "..."
+}
