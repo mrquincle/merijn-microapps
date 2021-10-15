@@ -1,0 +1,6 @@
+git clone bluenet
+copy old-bluenet/config/meri to new-bluenet/config
+mkdir build
+cd build
+cmake .. -DBOARD_TARGET=meri
+make

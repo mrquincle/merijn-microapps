@@ -1,0 +1,13 @@
+{
+  "name": "cs-ble-uploader",
+  "version": "0.0.0",
+  "description": "BLE uploader",
+  "keywords": [
+    "tools",
+    "uploader"
+  ],
+  "homepage": "",
+  "system": [
+    "linux_x86_64"
+  ]
+}

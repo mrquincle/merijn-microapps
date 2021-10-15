@@ -1,0 +1,34 @@
+// AUTOMATICALLY GENERATED FILE. PLEASE DO NOT MODIFY IT MANUALLY
+//
+// PIO Unified Debugger
+//
+// Documentation: https://docs.platformio.org/page/plus/debugging.html
+// Configuration: https://docs.platformio.org/page/projectconf/section_env_debug.html
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug",
+            "executable": "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/.pio/build/microapp/program",
+            "projectEnvName": "microapp",
+            "toolchainBinDir": "",
+            "internalConsoleOptions": "openOnSessionStart",
+            "preLaunchTask": {
+                "type": "PlatformIO",
+                "task": "Pre-Debug"
+            }
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (skip Pre-Debug)",
+            "executable": "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/.pio/build/microapp/program",
+            "projectEnvName": "microapp",
+            "toolchainBinDir": "",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

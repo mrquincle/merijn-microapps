@@ -1,0 +1,39 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/include",
+                "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/include",
+                    "/home/m/workspace/concepts/8.pio_own_platform_no_framework_and_tools/pio/src",
+                    ""
+                ]
+            },
+            "defines": [
+                ""
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "compilerPath": "/home/m/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++",
+            "compilerArgs": [
+                "-mthumb",
+                "-mcpu=cortex-m4",
+                "-mfloat-abi=hard",
+                "-mfpu=fpv4-sp-d16",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
