@@ -1,0 +1,34 @@
+2021-10-07 14:48:23,564 INFO   : uploaded chunk offset=1344
+2021-10-07 14:48:23.564372 Upload done
+Validate..
+2021-10-07 14:48:23,564 DEBUG  : hasCharacteristic characteristicUUID=24f1000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-07 14:48:23,564 DEBUG  : setupSingleNotification serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-07 14:48:23,568 DEBUG  : setupSingleNotification: subscribe for notifications.
+2021-10-07 14:48:23,568 DEBUG  : register callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+2021-10-07 14:48:23,568 DEBUG  : setupSingleNotification: writeCommand().
+2021-10-07 14:48:23,569 DEBUG  : hasCharacteristic characteristicUUID=24f1000c-7d10-4805-bfc1-7663a01c3bff
+2021-10-07 14:48:23,569 DEBUG  : writeToCharacteristic serviceUUID=24f00000-7d10-4805-bfc1-7663a01c3bff characteristicUUID=24f0000c-7d10-4805-bfc1-7663a01c3bff content=[5, 92, 0, 2, 0, 0, 0]
+2021-10-07 14:48:23,650 DEBUG  : Write Characteristic 24f0000c-7d10-4805-bfc1-7663a01c3bff | /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char0018: bytearray(b'\n^\xc9\x00[.\xc8TX\x81u\xd4\x8dt\xdd\x1c\xfcW\xb6\x93')
+2021-10-07 14:48:23,658 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [0, 208, 161, 54, 2, 14, 68, 106, 211, 39, 193, 181, 27, 247, 217, 7, 191, 214, 92, 115]}
+2021-10-07 14:48:23,658 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [0, 208, 161, 54, 2, 14, 68, 106, 211, 39, 193, 181, 27, 247, 217, 7, 191, 214, 92, 115]}, []]
+2021-10-07 14:48:23,658 DEBUG  : Received part 0
+2021-10-07 14:48:23,660 DEBUG  : DBUS: path: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c, domain: org.bluez.GattCharacteristic1, body: {'Value': [255, 62]}
+2021-10-07 14:48:23,661 DEBUG  : GATT Char Properties Changed: /org/bluez/hci0/dev_FD_FC_93_F8_97_BA/service0017/char001c | [{'Value': [255, 62]}, []]
+2021-10-07 14:48:23,661 DEBUG  : Received part 255
+2021-10-07 14:48:23,661 DEBUG  : Received last part. Merged data: [208, 161, 54, 2, 14, 68, 106, 211, 39, 193, 181, 27, 247, 217, 7, 191, 214, 92, 115, 62]
+2021-10-07 14:48:23,662 DEBUG  : Result: [5, 92, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-10-07 14:48:23,662 DEBUG  : _killNotificationLoop
+2021-10-07 14:48:23,751 DEBUG  : remove callback for notifications to uuid=24f0000d-7d10-4805-bfc1-7663a01c3bff
+Traceback (most recent call last):
+  File "upload_microapp.py", line 104, in <module>
+    loop.run_until_complete(main())
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "upload_microapp.py", line 91, in main
+    await core._dev.validateMicroapp(appIndex)
+  File "/usr/local/lib/python3.8/dist-packages/crownstone_ble/core/ble_modules/DevHandler.py", line 55, in validateMicroapp
+    await self.core.control._writeControlAndGetResult(controlPacket)
+  File "/usr/local/lib/python3.8/dist-packages/crownstone_ble/core/ble_modules/ControlHandler.py", line 268, in _writeControlAndGetResult
+    raise CrownstoneException(CrownstoneError.RESULT_NOT_SUCCESS, f"Result code is {resultPacket.resultCode}")
+crownstone_core.Exceptions.CrownstoneException: (<CrownstoneError.RESULT_NOT_SUCCESS: 'RESULT_NOT_SUCCESS'>, 'Result code is 33')
+

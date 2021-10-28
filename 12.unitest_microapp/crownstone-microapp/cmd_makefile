@@ -1,0 +1,19 @@
+mkdir -p build
+echo "Get updated ino file"
+echo '#include <Arduino.h>' > build/example.c
+cat example.ino >> build/example.c
+echo "Compile without firmware header"
+scripts/microapp_make.py include/microapp_header_symbols.ld
+/home/m/workspace/bluenet-2/tools/gcc_arm_none_eabi/bin/arm-none-eabi-g++ -CC -E -P -x c -Iinclude include/microapp_symbols.ld.in -o include/microapp_symbols.ld
+/home/m/workspace/bluenet-2/tools/gcc_arm_none_eabi/bin/arm-none-eabi-g++ -std=c++17 -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -fno-exceptions -fno-enforce-eh-specs -nostdlib -ffreestanding -fno-threadsafe-statics -Wl,--gc-sections -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float src/main.c src/microapp.c src/Arduino.c src/Wire.cpp src/Serial.cpp build/example.c /home/m/workspace/bluenet-2/source/shared/ipc/cs_IpcRamData.c -I/home/m/workspace/bluenet-2/source/shared -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o build/example.elf.tmp
+echo "Create temp bin file"
+/home/m/workspace/bluenet-2/tools/gcc_arm_none_eabi/bin/arm-none-eabi-objcopy -O binary build/example.elf.tmp build/example.bin.tmp
+scripts/microapp_make.py -i build/example.bin.tmp include/microapp_header_symbols.ld
+echo "Compile with firmware header"
+/home/m/workspace/bluenet-2/tools/gcc_arm_none_eabi/bin/arm-none-eabi-g++ -std=c++17 -mthumb -ffunction-sections -fdata-sections -Wall -Werror -fno-strict-aliasing -fno-builtin -fshort-enums -Wno-error=format -fno-exceptions -fno-enforce-eh-specs -nostdlib -ffreestanding -fno-threadsafe-statics -Wl,--gc-sections -Wno-error=unused-function -Os -fomit-frame-pointer -Wl,-z,nocopyreloc -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -u _printf_float src/main.c src/microapp.c src/Arduino.c src/Wire.cpp src/Serial.cpp build/example.c /home/m/workspace/bluenet-2/source/shared/ipc/cs_IpcRamData.c include/microapp_header_symbols.ld -I/home/m/workspace/bluenet-2/source/shared -Iinclude -Linclude -Tgeneric_gcc_nrf52.ld -o build/example.elf
+echo "Create hex file"
+/home/m/workspace/bluenet-2/tools/gcc_arm_none_eabi/bin/arm-none-eabi-objcopy -O ihex build/example.elf build/example.hex
+echo "Create bin file"
+/home/m/workspace/bluenet-2/tools/gcc_arm_none_eabi/bin/arm-none-eabi-objcopy -O binary build/example.elf build/example.bin
+echo "APP_BINARY_SIZE = 1408; CHECKSUM = 27817; CHECKSUM_HEADER = 21029; APP_BUILD_VERSION = 0; START_OFFSET = 20; HEADER_RESERVED = 0; HEADER_RESERVED2 = 0;"
+echo "Result: build/example.hex (and build/example.bin)"

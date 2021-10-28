@@ -1,0 +1,53 @@
+{
+  "name": "csmicroapps",
+  "title": "CS Mircoapps",
+  "description": "Upload microapps",
+  "homepage": "",
+  "license": "",
+  "keywords": ["microapps"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mPlagge/platform-crownstone-microapps.git"
+  },
+  "version": "0.0.0",
+  "frameworks": {
+    "arduino": {
+      "package": "framework-arduinomicroapps",
+      "script": "builder/frameworks/arduino.py"
+    }
+  },
+  "packages": {
+      "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "owner": "platformio",
+      "version": ">=1.60301.0,<1.80000.0",
+      "optionalVersions": [
+        "~1.80201.0",
+        "~1.90201.0"
+      ]
+    },
+    "tool-nrfjprog": {
+      "type": "uploader",
+      "optional": false,
+      "version": "~1.90702.0"
+    },
+    "tool-cs-ble-uploader": {
+      "type": "uploader",
+      "optional": false,
+      "version": "https://gitlab.com/mPlagge/tool-cs-ble-uploader.git"
+    },
+    "tool-cs-header-maker": {
+      "type": "tool",
+      "optional": false,
+      "version": "https://gitlab.com/mPlagge/tool-cs-header-maker.git"
+    },
+    "framework-arduinomicroapps" : {
+      "type": "framework",
+      "optional": false,
+      "version": "https://gitlab.com/mPlagge/framework-arduinomicroapps"
+    }
+  },
+  "pythonPackages":{
+    "crownstone-ble" : "2.1.0"
+  }
+}
