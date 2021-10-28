@@ -20,8 +20,6 @@ env.Append(
 env.Append(
     CORE = join(platform.get_package_dir("framework-arduinomicroapps"), 'cores/Crownstone/src'),
     INCLUDE = join(platform.get_package_dir("framework-arduinomicroapps"), 'cores/Crownstone/include'),
-    #CORE = join(env['CWD'], 'core'),
-    #INCLUDE = join(env['CWD'], 'include'),
     SRC = join(os.getcwd(), 'src'),
     BUILD = env['BUILD_DIR'],
     SCRIPTS = join(env['CWD'], 'scripts'),
@@ -115,11 +113,19 @@ firmware_bin = env.build_bin(target="$MAIN_BIN", source="$MAIN_ELF")
 # Targets and defaults
 #
 
-up_flag = ''
-for flag in env['UPLOAD_FLAGS']:
-    up_flag += f" {flag}"
- 
-upload_actions = f"python3 $UPLOAD_SCRIPT  -f $MAIN_BIN {up_flag}"
+upload_protocol = env['$UPLOAD_PROTOCOL']
+
+if upload_protocol == "nrfjprog":
+    upload_actions = "nrfjprog --version"
+
+#elif upload_protocol == "ble":
+else:
+    up_flag = ''
+    for flag in env['UPLOAD_FLAGS']:
+        up_flag += f" {flag}"
+     
+    upload_actions = f"python3 $UPLOAD_SCRIPT  -f $MAIN_BIN {up_flag}"
+
 env.AddPlatformTarget("upload", firmware_bin, upload_actions)
 
 t= firmware_bin
