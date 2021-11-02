@@ -7,7 +7,7 @@
 // returns size MAX_PAYLOAD for strings that are too long, note that this can still not fit in the payload
 // the actually supported string length depends on the opcode
 // the limit here is just to prevent looping forever
-unsigned int strlen(const char *str) {
+uint8_t strlen(const char *str) {
 	for (uint8_t i = 0; i < MAX_PAYLOAD; ++i) {
 		if (str[i] == 0) {
 			return i;

@@ -46,7 +46,7 @@ if args.action == 'add':
 
 
 # Initialize the Bluetooth Core.
-core = CrownstoneBle(args.hciIndex)
+core = CrownstoneBle(hciIndex=args.hciIndex)
 core.loadSettingsFromFile(args.keyFile);
 
 print("Connecting to", args.bleAddress)

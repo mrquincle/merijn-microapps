@@ -8,6 +8,10 @@ from os.path import join
 def create_empty_header_symbols_file(target, source, env):
     print("Generated empty headers")
     os.system(f"{env['MICROAPP_MAKE_SCRIPT']} {env['HEADER_LD']}")
+    header_file = open(f'{env["HEADER_LD"]}', 'r')
+    lines = header_file.readlines()
+    for l in lines:
+        print(l, end='')
 
 env = DefaultEnvironment()
 
@@ -50,6 +54,8 @@ for index, file_ in enumerate(core_files):
 env.Append(CORE_FILES = core_files)
 
 env.Replace(
+    #CC="arm-none-eabi-g++",
+    #OBJCOPY="arm-none-eabi-objcopy"
     CC="/home/m/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++",
     OBJCOPY="/home/m/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-objcopy"
 )
@@ -90,20 +96,19 @@ if env.GetOption('clean'):
     create_empty_header_symbols_file(None, None, env)
 
 microapp_symbols = env.build_microapp_symbols(source="$SYMBOLS_IN", target="$SYMBOLS_LD")
+#env.AddPreAction(microapp_symbols, create_empty_header_symbols_file)
 
 firmware_elf_tmp = env.build_elf_tmp(source="$MAIN_C", target="$MAIN_ELF_TMP")
 Depends(firmware_elf_tmp, microapp_symbols)
-env.AddPreAction(firmware_elf_tmp, create_empty_header_symbols_file)
 
-#firmware_bin_tmp = env.build_bin_tmp(source="$MAIN_ELF_TMP", target="$MAIN_BIN_TMP")
-#
+firmware_bin_tmp = env.build_bin_tmp(source="$MAIN_ELF_TMP", target="$MAIN_BIN_TMP")
+
 #firmware_header_ld = env.build_microapp_header_symbols(target="$HEADER_LD",source="$MAIN_BIN_TMP")
-#
 #env.NoClean("$HEADER_LD")
 #env.AlwaysBuild("$HEADER_LD")
-#
+
 #firmware_elf = env.build_elf(target='$MAIN_ELF', source='$MAIN_C')
 #Depends(firmware_elf, firmware_header_ld)
-#
+
 #firmware_hex = env.build_hex(target="$MAIN_HEX", source="$MAIN_ELF")
 #firmware_bin = env.build_bin(target="$MAIN_BIN", source="$MAIN_ELF")

@@ -30,7 +30,7 @@ const uint8_t HIGH = !LOW;
 #define NUMBER_OF_PINS 13
 
 // returns size MAX_PAYLOAD for strings that are too long
-unsigned int strlen(const char *str);
+uint8_t strlen(const char *str);
 
 /*
  * To save space have a single global message object.
